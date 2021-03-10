@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	 #view{
+	 	font-size:5em; text-align:center; 
+	 }
+
+</style>
+<script>
+//setInterval(): 일정한 시간 간격으로 함수 호출
+	var n = 1;
+	var timer; 
+	function countNumber(){
+		document.getElementById("view").innerHTML = n;
+		
+		
+		//10까지 출력되고 나면 interval 중지
+		if(n>=10){
+			clearInterval(timer); // (중지할 인터벌이름)
+		}
+		
+		n++;
+		console.log('bbbbbb',n);
+	}
+	function startNumber(){
+		//           호출할 함수명    시간(밀리초 1초에 한번씩 함수를 호출해)
+		timer = setInterval( "countNumber()", 1000);// interval 을 변수에 넣어준 후에 변수를 멈춤
+	// setInterval 은 한 번 호출하면 일정한 시간 간격으로 함수를 자동 호출한다.
+		console.log('aaaaaa'); // 한번 실행하면 다시 안나옴
+	}
+</script>
+</head>
+<body onload="startNumber()">
+	<h1>일정한 시간 간격으로 함수 호출 : setInterval()</h1>
+	
+	<div id = "view"></div>
+</body>
+</html>

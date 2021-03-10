@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+    //계산가능
+    // 연산자 : + - * /  % < > >= <= != == += -= *= ... ++ -- && ||  ! 
+    // 명령어 if , if else, for, while, switch, do while, break, continue, 
+    
+    var str='hong';// str은 문자화 됨 'hong' or "hong" 도 가능
+    var n= 1234;
+    var n2 = 12.23;
+    
+    //함수정의 (단위로 볼때 메소드가 함수)
+    // 페이지 로딩 시에는 실행하지 않음 
+    function gugudan(  ){   // 호출안하면 실행 안됨
+        // 구구단 ...
+        var dan = document.getElementById('num').value;
+        var r="";
+        for(var i =2; i<=9; i++){
+
+            r+= dan+"*"+i+"="+(dan*i)+"</br>";
+        }
+        document.getElementById("result").innerHTML=r; //function 이 호출될때 input박스에 값을 넣으면 그 값ㅇ르 구구단에 넣어서 값ㅇ르 출력 
+        //innerHTML 그 전 값은 없애고 자기가 들어감 
+        document.getElementById("num").value ="";
+    } // 반복실행은 무조건 function에 넣는다. 
+    
+    function plus(){
+        // 더해서result에 값 넣어줘서 출력
+        // 문자를 숫자로 바꾸기      Integer.parseInt(), Double.parseDouble()  -> parseInt 문자를 숫자로...
+        var n1= parseInt(document.getElementById("num").value); // 첫번째 값
+        var n2 = parseInt(document.getElementById("num2").value); // 두번째 값
+        
+        //계산
+        var result = n1+n2; // 덧셈이 아니고 문자가 이어짐 여기에 들어가있는 데이터가 숫자 x 문자다. 문자+문자 다른 연산자는 계산 됨 !! 더하기일 때는 숫자로 바꿔서 연산
+        document.getElementById("result").innerHTML=result; //출력 계산result(자바스크립트영역에서만 지정됨)랑 값result다른변수라 다름
+
+    }
+    function imageChange(){
+        document.getElementById("i").src="../img/dog.png";
+        
+        
+    }
+    function change(){
+        document.getElementById("i").src="../img/1.png";
+        
+    }
+    function welcome(){
+        alert("홈페이지에 오신 것을 환영합니다.");
+    }
+    // 함수 호출 
+    // welcome();
+     
+    </script>
+    
+</head>
+<body onload="welcome"> <!--" "자바스크립트 영역 - 함수 여기서 호출-->
+
+숫자 :<input type="text" id="num"/>
+숫자 : <input type="text" id="num2"/>
+<input type="button" value="구구단" onclick="gugudan()"/> 
+<input type="button" value="더하기" onclick="plus()"/>
+<!--<input type="button" value="확인" onclick="alert('버튼을 선택함.')"/> 자바스크립트영역 alert 자바스크립트 명령어 -->
+<div id ="result"></div>
+	<!--출력-->
+	<script>
+      // document.getElementById("result").innerHTML=r;
+    </script>
+	<img src="../img/cat.png" id="i" onmouseover="imageChange()" onmouseout="change()"/> <br/>
+    <img src="../img/4.png" id="i" onmouseover="this.src='../img/cat.png'" onmouseout="this.src='../img/8.png'"/> <!--this가 있는 객체가 -->
+</body>
+</html>

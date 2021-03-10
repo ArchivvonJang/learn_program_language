@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+var scrollX = window.scrollX;
+var timer;
+
+ 	function scroll(){
+ 		scrollX++;
+ 		moviePoster.scrollTo(scrollX,0);
+ 		console.log(scrollX,"scroll()");
+ 	}
+ 	function scrollMove(){
+ 		
+ 	  timer= setInterval("scroll()",1000);
+ 	  console.log("scroll()");
+ 	}
+
+</script>
+<style>
+	#moviePoster{
+	white-space: nowrap; 
+		border: 1px solid gray;overflow:hidden; height:110px; padding:0px;
+		margin:0; padding:0; overflow-x:scroll hidden;
+	}
+	img{
+	 	float:left; 
+	 }
+	 button{
+		height: 120px; margin:0px; padding:0px; float:left; 
+		 }
+	#main{
+		 padding:0px; margin-left:300px;  float:left;width:650px; height:120px;
+	}
+</style>
+</head>
+<body>
+	<div id="main">
+	<button onclick="">◁</button>
+	<div id = moviePoster onload="scrollMove()" >
+
+		<script>
+		for(var i =1; i<= 20; i++){
+			if(i<10){
+			 document.write("<img src='postImg/movie0"+ i +".png'/>");
+			}else{
+				document.write("<img src='postImg/movie"+ i +".png'/>");
+			}
+		}
+		</script>
+		
+	</div>
+	<button onclick=" ">▷</button>
+	</div>
+	
+
+</body>
+</html>

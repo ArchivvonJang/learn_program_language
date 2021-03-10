@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Daum 로그인</title>
+	<style>
+		body, h1{margin:0px; padding:0px;	background-color:lightgray;}
+		/*상단*/
+		#main{
+			text-align:center;	
+			width:800px;
+			height:1000px;
+			background-color:white;
+			position:relative; 
+			left:350px;
+			
+		}
+		#header{	
+			height:200px;
+			border: 2px solid rightgray;
+		
+			
+		}
+		#header>div{
+			height:70px;
+			line-height:70px;
+			text-align:center;
+			padding: 26px 0 23px;
+   		    border-bottom: 1px solid #e0e0e0;
+		}
+		 #section, #footer>div{ /*중복 style 하나로 합쳐서 정리 */
+			width:800px;
+			margin:0 auto; /* 0px일때는 단위 생략가능 */
+			text-align:center;
+			background-color:white;
+		}
+		
+		#section{
+			background-color:white;
+			height:700px;
+			position:relative; 
+			border: 2px solid rightgray;
+			width:300px;
+		}
+		#footer{
+			overflow: hidden;
+		    height: 115px;
+		    padding-top: 18px;
+		    margin-top: 80px;
+		    border-top: 1px solid #ebebeb;
+		}
+		#footer>div{
+			font-size:0.8em;
+			font:rightgray;
+		}
+		#leftDiv{
+			height:250px;
+			width:250px;
+
+		}
+		#rightDiv{			
+			position: absolute;
+		 	height:250px;
+			width:250px;
+		    left: 150px;
+		   
+		}
+	
+		#btn{
+		
+			width:100%;
+			height:50px;
+			margin-top:20px;
+			background:#4d87ef;
+			color:white;
+		}
+		#id{
+		display: block;
+	    width: 100%;
+	    margin: 14px 0 13px;
+	    padding: 0 15px;
+	    border: 0 none;
+	    font-weight: bold;
+	    font-size: 16px;
+	    line-height: 1.1;
+	    color: #101010;
+	    vertical-align: top;
+	    background-color: transparent;
+	    outline: 0;
+	    box-sizing: border-box;
+		}
+		#pwd{
+	    display: block;
+	    width: 100%;
+	    margin: 14px 0 13px;
+	    padding: 0 15px;
+	    border: 0 none;
+	    font-weight: bold;
+	    font-size: 16px;
+	    line-height: 1.1;
+	    color: #101010;
+	    vertical-align: top;
+	    background-color: transparent;
+	    outline: 0;
+	    box-sizing: border-box;
+		}
+		#search{
+		display: inline-block;
+	    font-weight: bold;
+	    font-size: 12px;
+	    color: #7f7f7f;
+	    vertical-align: top;
+
+		}
+		#security{
+		position: relative;
+	    width: 100%;
+	    height: 38px;
+	    font-family: "돋움",dotum,sans-serif;
+	    line-height: 10px;
+		}
+	</style>
+
+</head>
+<body>
+	<div id=main>
+	<div id="header">
+				<div><img src ="daum.png"/></div> 			
+	</div>
+	<div id ="section">
+		<div id="leftDiv">
+		<form>
+		 	<div id="id"><input type= "text" name="userid" placeholder = "아이디 입력" size="30" maxlength = "30"/><div/>
+			<div id="pwd"><input type="password" name ="userpwd" placeholder="비밀번호 입력" size="30" maxlength ="30"/></div>
+			<div id="btn"><input type = "button" value="로그인" /></div>
+			<div><input type="checkbox" name="loginstatus" value="loginstatus"/> 로그인 상태 유지 </div>
+			<div id="security"><a href="#">IP보안</a> <input type = "button" value="on"/></div>
+			<div id="search">
+			<a href="#">아이디 찾기</a>
+			<a href="#">비밀번호 찾기</a>
+			</div>
+		<form/>
+		</div>
+		<div id="rightDiv">
+		  <img src="ad.png"/>
+		</div>
+	</div>
+	<div id = "footer">
+		<div>
+		ⓒ Kakao Corp. 고객센터
+		</div>	
+	</div>
+	</div>
+</body>
+</html>

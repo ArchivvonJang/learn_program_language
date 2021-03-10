@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		width:500px;height:100px;margin:50px; font-size:3em;
+		border:1px solid gray; text-align:center; line-height:100px;
+	}
+	/*박스에 그림자 설정*/
+	div:first-child{
+		/*box-shadow:선을 기준으로 왼쪽(음수),오른쪽(양수)/ 위쪽(+),아래쪽(-)	/투명	 / 그림자 색상	*/
+								box-shadow:	-5px	   5px     10px 	    gray;
+	}
+	/*글자에 그림자 설정*/
+	div:nth-of-type(2){
+		text-shadow:5px 5px 5px lightblue;
+	}
+	/*배경 그라데이션 */
+	div:last-child{
+		width:100%; height:700px; font-size:2em; line-height:1.2; color:white;
+		/*그라데이션 코드를 구해주는 사이트:  https://www.colorzilla.com/gradient-editor/ */
+		
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ebe9f9+0,cec7ec+0,f4c3f0+12,eafcee+23,d8d0ef+34,d8d0ef+34,d8d0ef+38,fcf8db+46,bbd5f9+54,f4c3f0+62,d8d0ef+70,eaeaea+85,bbd5f9+94,bbd5f9+94,c1bfea+100 */
+background: rgb(235,233,249); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(235,233,249,1) 0%, rgba(206,199,236,1) 0%, rgba(244,195,240,1) 12%, rgba(234,252,238,1) 23%, rgba(216,208,239,1) 34%, rgba(216,208,239,1) 34%, rgba(216,208,239,1) 38%, rgba(252,248,219,1) 46%, rgba(187,213,249,1) 54%, rgba(244,195,240,1) 62%, rgba(216,208,239,1) 70%, rgba(234,234,234,1) 85%, rgba(187,213,249,1) 94%, rgba(187,213,249,1) 94%, rgba(193,191,234,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(235,233,249,1) 0%,rgba(206,199,236,1) 0%,rgba(244,195,240,1) 12%,rgba(234,252,238,1) 23%,rgba(216,208,239,1) 34%,rgba(216,208,239,1) 34%,rgba(216,208,239,1) 38%,rgba(252,248,219,1) 46%,rgba(187,213,249,1) 54%,rgba(244,195,240,1) 62%,rgba(216,208,239,1) 70%,rgba(234,234,234,1) 85%,rgba(187,213,249,1) 94%,rgba(187,213,249,1) 94%,rgba(193,191,234,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(235,233,249,1) 0%,rgba(206,199,236,1) 0%,rgba(244,195,240,1) 12%,rgba(234,252,238,1) 23%,rgba(216,208,239,1) 34%,rgba(216,208,239,1) 34%,rgba(216,208,239,1) 38%,rgba(252,248,219,1) 46%,rgba(187,213,249,1) 54%,rgba(244,195,240,1) 62%,rgba(216,208,239,1) 70%,rgba(234,234,234,1) 85%,rgba(187,213,249,1) 94%,rgba(187,213,249,1) 94%,rgba(193,191,234,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', endColorstr='#c1bfea',GradientType=1 ); /* IE6-9 */
+
+	}
+</style>
+</head>
+<body>
+<div>
+	박스에 그림자 설정
+</div>
+<div>
+	글자에 그림자 설정
+</div>
+<div>
+21. What advice would you give to teams looking to improve their functional automated tests?
+Be flexible about the details, being defensive will stop you from innovating.
+Stay up-to-date with the latest tools and trends, but don’t jump on the hype train without doing an in-depth analysis.
+Be extra careful with assumptions, a browser is not just a JavaScript interpreter.
+If your website works on Chrome on Windows, it doesn’t automatically mean that it works on Chrome on MacOS or on Chrome on mobile devices.
+22. What’s the one thing that every team should do, but most of them don’t?
+Testing on Safari, it’s the second most used browser.
+And it’s not going away anytime soon, it’s going to be even more popular.
+It keeps getting new features, Apple is determined to get even more of the market share from Chrome.
+</div>
+</body>
+</html>

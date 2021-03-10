@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+	 body{ background:white;}
+	 img{
+	 	margin: auto;
+	 	display:block;
+	 	margin-left:410;
+	 }
+	 tr{
+	 	background:rgb(239,137,154);
+	 	width:100%;
+	 }
+	</style>
+</head>
+<body>
+	<img src="title_layer.gif" align="left" style="width:400px; height:400px; margin:0px auto ; padding:0;" />
+	<tr></tr>
+	<img src="glass1.gif" style="margin-left:410; margin-right:auto;"/>
+	<img src="glass2.gif"/>
+	<img src="glass3.gif"/>
+</body>
+</html>

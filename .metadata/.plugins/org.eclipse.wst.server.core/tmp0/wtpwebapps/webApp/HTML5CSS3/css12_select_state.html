@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	/*상태 선택자*/
+	/*focus -> 커서가 컴퍼넌트 돌아오면*/
+	input:focus{
+		background-color:yellow;
+	}
+	/*checked -> 컴퍼넌트가 체크되면....*/
+	input:checked{
+	width:50px;
+	height:50px;
+	}
+	/*
+	disabled : 비활성화  서버로 데이터를 가져가면 안가져와짐  속성값 x  
+	readonly : 읽기전용  클릭하면 글자 안써짐 이 데이터는 서버로 넘어감 값은존재 o
+	*/
+	textarea:disabled{
+		color:red; font-size:1.5em;
+	 }
+	 /*enabled : 읽기 전용일 때 스타일 적용*/
+	input:enabled{
+		background-color:red; color:#fff;
+	}
+</style>
+
+</head>
+<body>
+<form method="post" action="bbb.jsp">
+	아이디 :<input type ="text" name = "userid" placeholder = "아이디를 입력하세요."
+			 size ="10" maxlength = "5" value="cat" enabled/><br/>
+	비밀번호 : <input type = "password" name = "userpwd" placehoder = "비밀번호 입력" disabled/><br/>
+	파일첨부 : <input type = "file" name = "filename"  id="filename"/><br/>
+	
+	체크박스 : <input type = "checkbox" name ="hobby" value ="등산"/> 등산
+			<input type = "checkbox" name = "h1" value = "농구" checked/> 농구
+			<input type = "checkbox" name = "h2" value = "배구"/> 배구 <br/>
+	
+	라디오 : <input type = "radio" name = "gender" value = "F" checked/> 여 
+		   <input type = "radio" name = "gender" value = "M"/> 남 <br/>
+		   
+	여러줄의 텍스트 : <textarea name = "content" rows = "5" cols ="50" disabled> 컨텐츠 </textarea> <br/>
+	
+	목록 태그 : <select name = "hobby2" size= "3" multiple>
+				<option value = "A"> 독서 </option>
+				<option value = "등산"> 등산 </option>
+				<option value = "바이크" selected> 바이크 </option>
+				<option value = "스케이트보드"> 스케이트보드 </option>
+			</select> <br/>
+	<input type="button" value="버튼"/>
+			
+	</form>		
+</body>
+</html>

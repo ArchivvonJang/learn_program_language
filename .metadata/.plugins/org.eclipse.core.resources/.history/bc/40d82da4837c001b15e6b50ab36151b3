@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div id= "header"></div>
+<div id="header2"></div>
+<div id="bar"></div>
+<div id="content"></div>
+	<img src-"img/sunset1.jpg"/>
+</body>
+</html>

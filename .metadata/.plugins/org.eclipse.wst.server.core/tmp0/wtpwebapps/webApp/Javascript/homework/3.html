@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   
+    <title>Document</title>
+    <style>
+        div{
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+    <script>
+        var screen = document.getElementById("normal");
+        function setImg(){
+            document.getElementById("normal").style.display="none";
+        }
+     
+        function setScreen(src){
+            document.body.background=eval(src);
+
+        }
+        function big_img(img){
+        bigImg=eval("document.all." + img + ".style");
+        bigImg.pixelTop=event.clientY;
+        bigImg.pixelLeft=event.clientX;
+        bigImg.display= "block";
+        }
+        function div_close(img){
+            closeImg=eval("document.all." + img + ".style");
+        closeImg.display="none"
+        }
+    </script>
+</head>
+<body>
+    <div id="normal"><img src ="img/6.gif" onclick="setImg(); setScreen()"/></div>
+</body>
+</html>

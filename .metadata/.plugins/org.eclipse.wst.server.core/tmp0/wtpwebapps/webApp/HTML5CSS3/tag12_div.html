@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		div{width:200px; height:200px; border:1px solid gray}
+		#d1{background:green; z-index:100; position:relative;} 
+		/*position :  좌표를 설정할 수 있다. (left, top, right, bottom)
+			속성 값 : static(생략, 좌표설정 안됨), 
+					relative(좌표 설정 가능), 
+					absolute(좌표 설정 가능 : 공간을 뺀다. )
+					
+			z-index : 양수를 설정하면 값이 높을수록 위에 표시 
+			
+			겹치는 것 자유롭게 조정할 수 있음
+		*/
+		
+		#d2{
+			position:absolute;
+			left:100px; top:100px;
+			/*d2가 absolute일때 d2를 배경으로 좌표 지정 없으면, 
+			body를 기준으로 좌표를 잡음 감싸고 있는 애가 누구냐에 따라 영향을 받는다. */	
+			
+			z-index:5;
+			
+		}
+		
+		#d3{
+			background-color:#ddd;
+			position:relative; 
+			top:50px;/*현재 있어야하는 자리에서 아래로 50px올라간다. 그리고 자기 공간을 차지하고 있음 자리반환x */
+			z-index:10;
+		}
+		#d4{
+			background:pink; width:80px;height:80px;
+			position:absolute;
+			left:100px; top:100px; 
+		}
+		#d5{
+			width:100px;
+			height:100px;
+			background-color:lightblue;
+			position:absolute; 
+			/* relative 박스를 기준으로 좌표처리됨 d3의 relative가 없어지면 body를 기준으로 좌표를 잡음 */
+			left:30px;  top:30px;
+		}
+		#d6{
+			position:absolute;
+			width:100px;
+			height:200px;
+			border:1px solid gray;
+			background-color:yellow;
+			right:10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="d1">aaaa</div> <!-- 기본 배경 투명 --> 
+	<div id="d2">
+		bbbb
+		<div id="d4">44444</div> <!-- d2안에 d4  -->		
+	</div> 
+	<div id="d3">
+		cccc
+		<div id="d5">55555</div>
+	</div>
+	<div id="d6"></div>	
+</body>
+</html>

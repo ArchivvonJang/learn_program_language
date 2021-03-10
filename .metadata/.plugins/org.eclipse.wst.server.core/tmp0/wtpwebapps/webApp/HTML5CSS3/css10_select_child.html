@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>후손, 자손, 반응 선택자</title>
+<style >
+	/*자손 선택자*/
+	div>ul{
+		background-color:yellow;
+		
+	}
+	/*후손 선택자*/
+	div h2{
+		color:green;
+	}
+	/*반응 선택자*/
+	div li:hover{  /*마우스 올리면 반응 - 동작이 일어나면 색상변경*/	
+		background-color:lightblue;   /*노란부분은  margin*/
+	}
+	div li:active{ /*클릭할 때 반응*/	
+		color:#f00;
+	}
+</style>
+</head>
+<body>
+<div>
+  <ul> <!-- ul의 자손 li -->
+  	<li>자손, 후 선택자 11</li>
+  	<li>자손, 후 선택자 22</li>
+  	<li>자손, 후 선택자 33</li>
+  	<li>자손, 후 선택자 44
+  		<h2>반응선택자...</h2>
+  	</li> 	
+  	<li>자손, 후 선택자 55</li>
+  </ul>
+</div>  
+ 
+  <ul>
+  	<li>자손, 후 선택자 11</li>
+  	<li>자손, 후 선택자 22</li>
+  	<li>자손, 후 선택자 33
+  		<h2>반응선택자~~~~</h2>
+  	</li>
+  	<li>자손, 후 선택자 44</li>
+  	<li>자손, 후 선택자 55</li>
+  </ul>
+</body>
+</html>

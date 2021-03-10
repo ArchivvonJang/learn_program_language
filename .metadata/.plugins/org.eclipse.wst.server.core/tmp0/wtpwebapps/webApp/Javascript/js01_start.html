@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 시작</title>
+<style>
+	body{
+		font-size:2em;
+	}
+</style>
+    <script language="javascript">
+    // 한줄 주석
+    /*여러 줄 주석*/
+    document.write("자바스크립트에서 <b>표시한</b> 문자<br/>");
+    //웹브라우저 document에서 확인/  계산, 질문(if), 반복문/ document : 내장 객체 를 가지고 있ㄷ. 
+    // 따옴표와 큰 따옴표를 유동적으로 쓸 수 있다. 
+    document.write('자바스크립트에서 표시한 문자<br/>')
+
+    </script>
+    <script src="srcript.js"> </script> <!-- script와 연결 -->
+</head>
+<body>
+<form>
+<input type="text" name="username" value="홍길동"/>
+</form>
+	<br/><img src="../img/cat.png"/>
+	<script>
+        document.write("<img src='../img/dog.png'/>"); //바디에 출려괴면 html tag가 된다. 
+        document.write("<h1>;세미콜론을 생략할 수 있다.</h1>");
+        document.write('<h1>;따옴표 큰따옴표</h1>');
+        
+        document.frm.username.values="세종대왕~~~~~";
+    	document.write("html 다음에서 자바스크립트 실행...");
+        
+        
+        var r="1+2+3";
+        document.wirte("r="+r);
+        
+        var r2 = eval("1+2+3"); // 함수에 넣었을 떄
+        document.write("r2="+r2);
+        
+        var r3= eval("<img src='../img/1.png'/>"); // 크롬 문자열을 이미지로 변경해줌 , 함수로 막아버렸다면?
+        r3.src="../img/1.png";
+        		document.write("r3="+r3);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*overflow :  hidden(넘치면 내용을 숨김), scroll, auto*/
+	div{
+	width:500px; height:500px; overflow:hidden; border:1px solid cyan;
+	}
+
+	div>img{
+		width:100%;
+	}
+	
+	input:checked+div{     /*동위선택자 input 다음에 있는 div, 선택자를 잘 골라야함*/
+		/*height:0px;
+		display:none; 
+		visibility:hidden;*/
+		
+		/*지정한 시간을 기준으로 변환, 초단위 예)시간 지연 높이가 바뀌는 시간 2초 걸리도록*/
+		transition-duration:2s;  
+		
+		/*투명하게*/
+		opacity:0.5;
+		
+		width:20px; height:0px;
+	}
+	
+
+</style>
+</head>
+<body>
+	<input type="checkbox"/>클릭
+	<div>
+		<img src="../img/cat.png"/>
+	</div>
+	<div>
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+	</div>
+</body>
+</html>

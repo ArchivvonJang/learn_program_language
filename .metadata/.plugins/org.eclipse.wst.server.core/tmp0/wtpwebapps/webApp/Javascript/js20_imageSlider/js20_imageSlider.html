@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	 #post{
+	 	width:880px; height:114px; margin:0px auto;
+	 }
+	 #post>input[type=button]{
+	 	width:30px; height:114px;
+	 }
+	 #post>div{   /*이미지를 감싸고 있는 div */
+	 	width:820px; height:114px;  overflow:hidden;
+	 }
+	 #post>input, #post>div{
+	 	float:left;
+	 }
+	 #imgList{
+	 	width:1640px; position:relative;  /*좌표를 설정하기 위해 position을 줌, 원래 자리에서 빠져나가는거absolute*/
+	 }
+</style>
+<script>
+// 이미지 넣기 
+	function setPostImage(){
+		var tag="";
+		for(var i=1; i<=20; i++){
+			tag+="<img src = 'postImg/movie";
+			if(i<10){
+				tag+="0"+i;
+			}else{
+				tag+=i;
+			}
+			tag +=".png'/>"
+		}
+		console.log(tag);
+		document.getElementById("imgList").innerHTML=tag;
+	}
+	//movieList가 움직이는 메소드
+	var x=0;
+	var stepX =-5; // 처음에 0부터 시작해서 -5씩 줄어듦  x<=-820 이면 이미지 끝
+	var timer; // interval 을 변수에 넣어서 div 에 객체에 이벤트 추가 
+	function imageMove(){
+		var movie= document.getElementById("imgList");
+		x = x + stepX; // -5 -10 -15.... 
+		movie.style.left= x +"px";// pixel setting
+		//방향전환 
+		if(x<=-820)
+			// -820 사진이 끝에 다다르면 양수로 변경
+			stepX=5;
+		if(x>=0) stepX=-5;
+	}
+</script>
+</head>
+<body onload="setPostImage(); timer=setInterval('imageMove()',700);"><!-- interval -->
+<div id="post">
+	<input type="button" value="◁"onclick="stepX=-5"/>
+	<div onmouseenter="clearInterval(timer);" onmouseleave="timer =  setInterval('imageMove()',300)">
+		<div id="imgList"> </div>
+	</div>
+	<input type="button" value="▷" onclick="stepX=5"/>
+</div>
+</body>
+</html>

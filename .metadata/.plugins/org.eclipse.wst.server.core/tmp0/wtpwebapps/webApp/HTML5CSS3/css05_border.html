@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style >
+		body{
+		
+			border:1px solid red;
+		}
+		ul{
+			/*
+			border-style:dotted;
+			border-top-style:solid;
+			border-right-style:dashed;
+			border-bottom-style:double;
+			border-left-style:dotted;
+			 */
+			/*그룹화 border-style: solid dashed double dotted;*/
+			 border-style: solid double; 
+			 /*선의 두께
+			 border-top-width:5px ; 
+			 border-right-width:10px;
+			 border-bottom-width:15px;
+			 border-left-width:20px;
+			 */
+			 border-width: 5px 10px 15px 30px;
+			 /*선의 색상
+			 border-top-color:red;
+			 border-bottom-color:green; */
+			 border-color : green;
+			 
+			 border: solid 10px green; /*이렇게도 그룹화*/
+			 border:double 5px red;
+		}
+		img{
+			border: 5px solid gray;
+			border-radius : 10px 20px;/*이미지 가장자리 둥글게*/
+		}
+	</style>
+</head>
+<body>
+	<h1> border 속성 : 선의 색상, 두께, 모양 설정</h1>
+	<ul>
+		<li>border-style : 선의 모양(solid :실선, dotted 점선, double :이중선, dashed , none : 선없음, groove : 홈이 파인 선, inset :볼록선)
+		<li>border-width : 선의 두께 (px)</li>
+		<li>border-color : 선의 색상(rgb코드, 컬러명)</li>
+	</ul>
+	<div>
+		<ul>
+			<li> HTML </li>
+			<li> CSS </li>
+			<li> JAVASCRIPT </li>
+		
+		</ul>
+	
+	</div>
+	<img src="../img/cat.png">
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//변수 - 함수 내에서 쓸수 있게
+	var win; 
+	//window 내장 객체 
+	function openPop(){
+		// option
+		// 1. 팝업창에 표시될 컨텐츠 파일명
+		// 2. 팝업창의 이름 
+		// 3. 창에 대한 옵션  폭높이좌표(width, height, left, top px은 안써도됨)
+		// 만든 내용을 변수에 넣어줌
+		win = window.open("popup.html","w","width=300, height=300, left=300");
+		//2번째 이름을 주니까 팝업창하나만 나옴 
+		
+		//  저기에서 값을 줘도되고 여기서 win 으로 창의 폭을 구하고 moveTo좌표설정
+		var left = (screen.widht/2)  - (win.outerWidth/2);
+		var top = (screen.height/2) - (win.outerHeight/2);
+		win.moveTo(left, top);
+	}
+	// 여기에 있어도됨 
+	//window.open("popup.html","","width=500, height=450, left=300");
+	//openPop();
+	
+	function closePop(){
+		//윈도우 종료
+		//win.close();	
+		
+		//window.close();// 여기서 윈도우는 코드가 있는 메인윈도우의 창 
+		
+		self.close();// 자신의 창을 종료 
+	}
+	function winResize(){
+		//창(window) 크기 조정
+		// 절대 사이즈(내가 원하는 사이즈)로 설정하기
+		//resizeTo( w, h )
+		//win.resizeTo(500,500);
+		
+		//상대 사이즈로 설정하기
+		// resizeBy(w,h);
+		win.resizeBy(10,10); // 현재 값을 기준으로 증감
+	}
+	function winMove(){
+		//window 위치 설정
+		 // 절대 위치 설정
+		// win.moveTo(300,300);
+		 
+		// 상대 위치 설정 (현재 위치를 기준으로 이동)
+		win.moveBy(10,10);
+	}
+	function winInfo(){
+		// window의 좌표
+		var winTag="";
+		var x = window.screenX;
+		var y = window.screenY;
+		winTag+="window.sreenX = "+x+"</br>";
+		winTag+="window.sreenY = " +y+ "</br>";
+		
+		
+		// window의 폭과 높이 
+		winTag+="window.outerWidth = "+ window.outerWidth+"</br>";
+		winTag+="window.outerHeight = "+ window.outerHeight+"<br/>";
+		
+		// window 컨텐츠 영역의 폭과 높이
+		winTag+="window.innerWidth = "+window.innerWidth+"</br>";
+		winTag+="window.innerHeight = "+window.innerHeight+"</br>";
+		
+		document.getElementById("winInfo").innerHTML=winTag;
+	}
+</script>
+</head>
+<body onload="winInfo();//openPop()">
+<!--<body onload="openPop()" >  --><!-- 자동호출 -->
+	<h1>window 내장 객체</h1>
+	<input type="button" value="팝업 창 띄우기" onclick="openPop()"/>
+	<input type="button" value="팝업 창 닫기" onclick="closePop()"/>
+	<input type="button" value="창 크기 조절" onclick="winResize()"/>
+	<input type="button" value="창위치 이동" onclick="winMove()"/>
+	<div id="winInfo" style="border:1px solid gray;"></div>
+</body>
+</html>

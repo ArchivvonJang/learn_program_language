@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>동위 선택자</title>
+<style>
+	/*
+		동위 선택자
+		선택자A + 선택자B   -> 선택자A의 바로 다음에 있는 선택자B에 적용된다.
+		선택자A ~ 선택자B   -> 선택자A 다음에 있는 모든 선택자B를 적용한다.
+	*/
+	
+	h1+h2{
+		color:red;
+	} 
+	h1~h2{
+	 	background-color:#ddd;
+	}
+	
+</style>
+</head>
+<body>
+<!-- 같은 레벨에 있는 선택자 
+	기준값을 (h1)을 기준을 h2(바로 아래 값)만 선택 or 같은 층(레벨)에 있는 아래목록 전체 선택
+-->
+	<h1>동위 선택자 AAAA</h1>
+	<h2>동위 선택자 BBBB</h2>
+	<h2>동위 선택자 CCCC</h2>
+	<h2>동위 선택자 DDDD</h2>
+	<h2>동위 선택자 EEEE</h2>
+	<h2>동위 선택자 FFFF</h2>
+	<h3>~~~~~~~~~~~~~~~~~~~</h3>
+
+	<h1>동위 선택자 AAAA</h1>
+	<h2>동위 선택자 BBBB</h2>
+	<h2>동위 선택자 CCCC</h2>
+	<h2>동위 선택자 DDDD</h2>
+	<h2>동위 선택자 EEEE</h2>
+	<h2>동위 선택자 FFFF</h2>
+	<h3>~~~~~~~~~~~~~~~~~~~</h3>
+</body>
+</html>

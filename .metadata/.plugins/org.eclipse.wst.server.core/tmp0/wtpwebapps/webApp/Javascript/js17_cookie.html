@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+// 쿠키 cookie : 사용자 컴퓨터에 기록을 남기는 것 
+// 기록은 변수 값 저장위치  언제까지 남아있는지(소멸시기)등을 저장 
+	function popupOpen(){
+		// 쿠키를 확인하여 팝업 생성여부 결정
+		
+		// 현재 쿠키를 얻어오기 변수에 넣어주기 
+		var cookie=document.cookie; // 
+		console.log(cookie); // event=2월 <이거 찍힘 - 어차피 문자열이다!
+		if(cookie.indexOf("event")==-1){ // index 가 0이 아니면, event가 없는 것/ 값을 물어보는것 substring
+			window.open("popup.html", "w","width=500, height=500");
+		} //쿠키 있으면 팝업창 안뜸, 쿠키를 지우고 새로고침하면 팝업창 나옴
+	
+		
+	} // onload="popupOpen()" 홈페이지 실행시 자동으로 팝업창 생성
+	
+</script>
+</head>
+<body onload="popupOpen()" >
+ <h1>쿠키를 이용한 팝업 창 띄우기 </h1>
+ <pre>
+ 	인터넷 접속자 컴퓨터에 데이터를 저장하는 것을 쿠키라 한다.
+ </pre>
+ <img src="../img/11.png"/>
+</body>
+</html>

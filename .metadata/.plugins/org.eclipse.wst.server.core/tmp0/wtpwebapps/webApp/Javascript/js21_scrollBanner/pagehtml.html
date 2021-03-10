@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#wrapper{
+		padding:0px; margin:0px;
+	}
+	#header{
+		height:400px; margin:0px; padding: 0px;
+	}
+	#header, #center{
+		position:absolute; left:350px; 
+	}
+	#lightblue{
+		background-color:lightblue; 
+	}
+	#pink{
+		background-color:pink; 
+	}
+	#lightblue, #pink{
+		padding:0 ; margin:0; width:800px; height:100px;
+	}
+	
+	#center{
+		width:800px; margin-top: 200px; background-color: aqua;
+	}
+    #fixed{
+    
+         position:fixed;
+        padding:0px;
+        width: 100%;
+        z-index:10;
+        width: 100%;
+        top:210px;
+        
+	}
+    #line{
+        position:sticky; background-color: blue; height: 5px; top:0px; z-index:10;
+    }
+    #hr{
+        
+    }
+
+	#leftB{
+		width:105px; height:300px; 
+	/*position:fixed; left:245px; background-color:yellow;*/
+	#rightB{
+		width:120px; height:410px; 
+	/*	position:fixed; right:250px; background-color:orange;*/
+	}
+	img{width:800px;}
+    
+    .sticky_box{ position:sticky; top:5px; height:300px; background-color: chartreuse;}
+</style>
+
+<script>
+  
+    function setBorder(){
+        
+    var y=window.scrollY;
+        if(y>=200"px"){
+            document.write()
+        }else{
+            
+        }
+    }
+    function clear(){
+        "width:0px;"
+    }
+    
+</script>
+</head>
+<body>
+<!-- 전체 -->
+<div id="wrapper">
+
+	<!-- 하늘색 분홍색 -->
+	<div id= "header">
+		<div id="lightblue" onclick="clear()"></div>
+		<div id="pink"></div>
+   
+	</div>
+	<!-- 이미지  -->
+	 <div id="line"></div>
+	<div id="center">
+	
+		<div>
+	 		<script>
+	 		for(var i=1; i<=9; i++){
+				document.write("<img src='img/sunset"+ i+".jpg'/>");	
+				
+			}
+	 		</script>
+	 	</div>
+	</div>
+		<!-- 배너 -->
+		    <hr/>
+	endwl<div id="fixed">
+
+	<div id="leftB" class="sticky_box">aa</div>
+	
+	<div id="rightB" class="sticky_box">bb</div>
+	</div>
+</div>
+</body>
+</html>

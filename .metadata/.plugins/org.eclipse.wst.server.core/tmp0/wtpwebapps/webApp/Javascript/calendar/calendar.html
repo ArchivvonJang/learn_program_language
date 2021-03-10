@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>calendar</title>
+<style>
+	#main{width: 320px; margin-left:300px; border: 1px solid rgb(126,175,189);}
+    img{height: 330px; width: 320px}
+    #img{text-align: center; margin-bottom:-4px}
+    #week{background-color: chocolate; margin:0px; text-align: center;};
+</style>
+     
+<script>
+function Calendar(){
+    //날짜 객체 
+	var date=new Date(); 
+    var year = date.getFullYear();
+    var month = date.getMonth()+1;
+    // 현재월의 시작요일
+	var firstDay=new Date(date.getFullYear(),date.getMonth(),1).getDay(); 
+     // 현재월 마지막 날짜
+	var lastDay=new Date(date.getFullYear(),date.getMonth()+1,0).getDate();
+    //요일 갯수
+	var cnt=0;
+    
+    
+    
+	var head = "<table style='text-align:center' width='320px' border='0px'cellspacing='0'         cellpadding='15px' font-size='2em'>";
+    head+="<th>"+year+" 년 "+month+" 월"+"</th>";
+    
+    
+    
+    //달력 테이블
+	var	calendar="<table style='text-align:center' width='320px' border='0px'cellspacing='0'         cellpadding='10px' background-color:>";
+	
+	// th : table head 표의 제목 (default: bold center) 
+    // tr : table row 가로 줄 (default: left)
+    // td : table data 셀 (위와 동일)
+    calendar+="<tr>";
+	calendar+="<td style=color:rgb(253,91,128)><b>일</td>";
+	calendar+="<td><b>월</td>";
+	calendar+="<td><b>화</td>";
+	calendar+="<td><b>수</td>";
+	calendar+="<td><b>목</td>";
+	calendar+="<td><b>금</td>";
+	calendar+="<td style=color:rgb(85,170,255)><b>토</td>";
+	calendar+="</tr>";
+	
+	
+	calendar+="<tr>";
+	for(var i=0;i<firstDay;i++){ // 첫째날 전요일 공백넣기
+		calendar+="<td>&nbsp;</td>";
+		cnt++;
+	}	
+	for(var i=1;i<=lastDay;i++){ // 숫자넣기, 현재달에 마지막날까지
+		if(cnt==0){ // 일요일
+			calendar+="<td style=color:rgb(253,91,128)>";
+			calendar+=i;
+			calendar+="</td>";
+			cnt++;
+		}else if(cnt==6){ // 토요일
+			calendar+="<td style=color:rgb(85,170,255)>";
+			calendar+=i;
+			calendar+="</td>";
+			cnt++;
+		}else{
+			calendar+="<td>";
+			calendar+=i;
+			calendar+="</td>";
+			cnt++;	
+		}		
+		
+		if(cnt%7==0){
+			calendar+="</tr><tr>"; //줄 바꿈
+			cnt=0;;
+		}
+	}
+	for(var i=0;i<7-cnt;i++)
+		calendar+="<td>&nbsp;</td>"; // 마지막날 이후의 공백 넣기
+		
+	calendar+="</tr>";
+	
+	document.write(head);
+	document.write(calendar);
+}
+
+    
+</script>
+</head>
+<body>
+<div id ="main">
+<div id="img"><img src="spring.jpg" ></div>
+<div >
+<script>
+		Calendar();
+</script>
+</div>
+</div>
+
+</body>
+</html>

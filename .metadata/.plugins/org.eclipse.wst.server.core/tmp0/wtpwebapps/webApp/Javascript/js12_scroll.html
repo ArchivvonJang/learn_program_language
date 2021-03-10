@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function scrollMove(){
+		// 스크롤바를 이동한다. 
+		// 상대이동
+		// scrollBy(x 좌우스크롤바 ,y 상하스크롤바 )  안움직일거면 0 위 -n 아래 n
+			window.scrollBy(0,50);
+			
+		// 절대이동
+		//window.scrollTo(0,500);
+		
+		//현재 스크롤바 위치
+		var scrollX = window.scrollx;
+		var scrollY = window.scrollY;
+		console.log('x->', scrollX);
+		console.log('y->', scrollY);
+	}
+
+	
+</script>
+<style type="text/css">
+   button{
+      position: fixed;
+      left: 200px;
+   }
+</style>
+</head>
+<body>
+<button onclick="scrollMove()">스크롤 이동</button> 
+	<div>
+		<script>
+			for(var i =1; i<= 9; i++){
+				 document.write("<img src='../img/"+ i +".png'/><br/>");
+			}
+		</script>
+	</div>
+</body>
+</html>

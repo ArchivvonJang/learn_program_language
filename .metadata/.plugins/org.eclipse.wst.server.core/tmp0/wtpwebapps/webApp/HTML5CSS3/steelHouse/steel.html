@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>스틸하우스</title>
+<style>
+    body{margin: 10px 10px;  background-color: rgb(146,204,101)}
+    ul,li{
+        margin:0; padding:0; list-style-type: none;  float: left; text-align: center;
+    } 
+    #mainDiv{
+        margin:3px 30p; background-color: white; width:880px; height: 900px; float: left; 
+    }
+    #img1>ul{margin-bottom:-4px; padding:0px;}
+    /*menu*/
+    /*menu bar*/
+    #menu>li {
+        float: left; font-size:1em; line-height: 52px; padding: 0 5px;  background-color: rgb(101,186,39); width: 157px;
+    }
+    /*menu font style*/
+    #menu>li a{
+         text-decoration:none; color:white; font-weight: bold;
+    }
+    /*radio버튼 숨기기 */
+    #tabMenu>input[type=radio]{display : none;}
+    #leftDiv{
+        margin-left: 30px;float: left; background-color: white; width: 124px; height: 900px;
+    }
+    /*왼쪽 로고 */
+    #leftDiv>img{
+        margin-top: 334px; height: 52px; width: 125px;
+    }
+     /*what's new, gallery image*/
+    #footDiv>ul:nth-of-type(1) img{width: 420px;}
+    /*what's new*/
+     #footDiv>div:nth-of-type(1){
+        width: 420px;height: 190px;
+    }
+     #footDiv>div:nth-of-type(1) li{
+        width:375px; height:25px; border: 2px solid lightgray; font-size:0.8em; text-align: left;  background-color:white; margin: 1px 10px 10px 0;
+    }
+    #footDiv>div:nth-of-type(1) a{
+        text-decoration:none;  color:rgb(93,94,89); padding: 5px;  display: inline-block;
+    }
+    /*
+    .button{
+      width:375px; height:25px; border: 2px solid lightgray; font-size:0.8em; text-align: left; margin: 0px 10px 10px 0; background-color:white; color:gray;
+    }
+    */
+    #footDiv> ul:nth-of-type(2) li::first-letter{
+        padding-left:6px; color:black; font-weight: bold;
+    }
+    /*gallery*/
+    #footDiv>div:nth-of-type(2){
+        width: 420px; height: 190px; float:right; margin-right:40px; margin-top: 0; 
+    }
+    #footDiv>div:nth-of-type(2) img, #footDiv>div:nth-of-type(2) li{
+        width:85px; height: 60px; font-size: 0.5em; color:gray; padding:0 8px 25px 8px;
+    }
+    #footDiv>div:nth-of-type(2) img{padding:0; margin-top:4px;}
+    /*하단 이미지*/
+    #footDiv>div:nth-of-type(3) 
+    </style>
+</head>
+<body>
+  <!--왼쪽 DIV와 이미지 -->
+    <div id="leftDiv">
+        <a href = "#"><img src="css_gaon_08.jpg"/></a>
+    </div>
+    <div id="mainDiv">
+        <div id="img1">
+          <!--상단 이미지-->
+           <ul>
+               <li>
+                   <img src="css_gaon_02.jpg"/>
+               </li>
+                <li>
+                   <img src="css_gaon_03.jpg"/>
+               </li>
+                <li>
+                   <img src="css_gaon_04.jpg"/>
+               </li>
+                <li>
+                   <img src="css_gaon_05.jpg"/>
+               </li>
+                <li>
+                   <img src="css_gaon_06.jpg"/>
+               </li>
+           </ul> 
+        </div> <!--img1 end-->
+        <!--메뉴-->
+        <div id="tabMenu">
+            <input type= "radio" name="menu" id= "m1"/>
+		    <input type= "radio" name="menu" id= "m2"/>
+		    <input type= "radio" name="menu" id= "m3"/>
+		    <input type= "radio" name="menu" id= "m4"/>
+		    <input type= "radio" name="menu" id= "m5"/>
+       
+            <!--라벨-->
+            <ul id="menu">
+                <li><label for ="m1"><a href="#">COMPANY</a></label></li>
+                <li><label for ="m2"><a href="#">STEELHOUSE</a></label></li>
+                <li><label for ="m3"><a href="#">ARCHITECTURE</a></label></li>
+                <li><label for ="m4"><a href="#">INTERIOR</a></label></li>
+                <li><label for ="m5"><a href="#">COMMUNITY</a></label></li>
+                
+            </ul>
+        </div><!--tabMenu end-->
+        <div id="img2">
+              <!--하단 이미지-->
+           <ul>
+               <li>
+                   <img src="css_gaon_15.jpg"/>
+               </li>
+                <li>
+                   <img src="css_gaon_16.jpg"/>
+               </li>
+                <li>
+                   <img src="css_gaon_17.jpg"/>
+               </li>
+                <li>
+                   <img src="css_gaon_18.jpg"/>
+               </li>
+                <li>
+                   <img src="css_gaon_19.jpg"/>
+               </li>
+           </ul> 
+        </div> <!--img2 end-->
+        <div id ="footDiv">
+               <!--what's new, gallery image-->
+            <ul>
+                <li><img src ="css_gaon_22.jpg"/></li>
+                <li><img src ="css_gaon_24.jpg"/></li>
+            </ul>
+                 <!--what's new-->
+            <div>   
+               <!--
+                <input type="button" class="button" value="01. 자주하시는 질문" onclick = "location.href = '#'>
+                <input type="button" class="button" value="02. 질문과 답변" onclick = "location.href = '#'">
+				<input type="button" class="button" value="03. 채용안내" onclick = "location.href = '#'"> 
+           -->
+               <ul>
+                  <li><a href="#"><span style="font-weight: bold">01.</span> 자주하시는 질문</a></li>
+                    <li><a href="#"><span style="font-weight: bold">02.</span> 질문과 답변</a></li>
+                    <li><a href="#"><span style="font-weight: bold">03.</span> 채용안내</a></li>
+                </ul>
+            </div>        
+                 <!--gallery-->
+            <div>  
+            <ul>
+                <li><img src="g1.png"/>멋진 인테리어</li>
+                <li><img src="g2.png"/>예쁜 실내</li>
+                <li><img src="g3.png"/>아파트 단지</li>
+                <li><img src="g3.png"/>회의실 내부</li>
+                
+                <li><img src="g1.png"/>멋진 인테리어</li>
+                <li><img src="g2.png"/>예쁜 실내</li>
+                <li><img src="g3.png"/>아파트 단지</li>
+                <li><img src="g2.png"/>회의실 내부</li>
+                
+            </ul>  
+            </div>      
+                  <!--customercenter, footLogo-->
+            <div>     
+             <ul>
+               <!-- <li><img src ="css_gaon_28.jpg"/></li> -->
+                <li><img src ="css_gaon_31.jpg"/></li>
+            </ul>
+            </div> 
+        </div>
+    </div> <!--mainDiv end-->
+</body>
+</html>

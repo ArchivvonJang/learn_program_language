@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>function 활용</title>
+<script>
+    function hap(a,b){
+        var r=a+b;
+        document.getElementById("result").innerHTML = a+"+"+b+"="+r;
+        
+    }
+    function output(name, tel){
+        document.getElementById("result").innerHTML= name + "," +tel;
+    }
+    function imgChange(i, imgName){
+    	//i =this = 이미지 
+        // i -> image 객체
+        // imgName -> String
+        // 아래의 this -> i -> i.scr-> img src 로  넘기기, 돔 방식: 태그를객체처럼
+        
+        i.src="../img/"+imgName;
+    }
+    function plus(){
+        //var num1=parseInt(document.getElementsById("n1").value);
+       // var num2=parseInt(document.getElementsById("n2").value);
+        var num1=document.getElementsById("n1").value;
+        var num2=document.getElementsById("n2").value;
+        console.log(isNaN(num1));
+        // is Not a Number() "10", "-10", "+10", "12.3", ".2", " ", "test" 음수 양수 실수 숫자로 인식 
+        //                    f     f      f     f     f    f    t   false가 나와야 숫자
+        //문자: true, 숫자 false, 빈 문자 false
+        if(!isNaN(num1)&&!isNaN(num2)&& num1 !="" && num2 !=""){
+            var n1 = parseInt(num1);
+            var n2 = parseInt(num2);        
+        
+        var r = n1 + n2;
+        
+        document.getElementById("result").innerHTML = num1+"+"+num2+"="+r;
+        }else{
+            documnet.getElementById("result").innerHTML = "잘못된 입력 값입니다. "
+        }
+    }
+    </script>
+</head>
+<body>
+    <input type="text" id="n1"/>
+    <input type="text" id="n2"/>
+<hr/>
+     <input type="button" value="더하기" onclick="plus()"/> 
+     <input type="button" value="더하기" onclick="hap(40,45)"/> <!--a = 40 b=45 로 넘어감--> 
+     <input type="button" value="곱하기"/>
+     <input type="button" value="문자열출력" onclick="output('홍길동', 010-1111-2222)"/>
+     <div id="result" style="background: pink"></div>
+     <img src="../img/cat.png" onclick="imgChange(this, 'dog.png')"/> 
+        
+</body>
+</html>

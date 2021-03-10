@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <title>21-03-10 수</title>
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+   <style>
+      body, ul, li{
+         margin: 0; padding:0; list-style-type: none;
+      }
+      a:link, a:visited, a:active{
+         text-decoration: none; color:gray;
+      }
+      a:hover{
+         color:black; font-weight: bold;
+      }
+      .container{
+         width:1000px;
+         margin:0px auto;
+      }
+      /*header*/
+      header{
+         font-size:3em;
+         height: 150px;
+         text-align: center;
+         line-height: 150px;
+         border-bottom: 2px solid gray;
+      }
+      /*메뉴*/
+      #menu{
+         height: 50px;
+         border-bottom:1px solid gray;
+
+      }
+      #menu>li{ /* 메뉴 : 아우터 탑 드레스 부분*/
+         float:left;
+         width: 20%;
+      }
+      #menu li{  /*후손*/
+         height: 50px;
+         line-height: 50px;
+         text-align: center;
+         background-color: white;
+      }
+      #menu ul{
+         position: relative; /*이미지 위로 올라옴*/
+         border: 1px solid gray; /*메인메뉴li 범위를 기준으로 숨김*/
+         display: none; /*숨김완료 */
+      }
+  
+   </style>
+   <script>
+      $(function(){
+         //--------------메뉴만들기-------------------
+         var main_menu=['OUTER','TOP','DRESS','BOTTOM','SUMMER'];
+         var sub_menu=[['가디건','자켓&점퍼','베스트', '코트','세일'],
+                     ['Tee','Cami','Knit','Shirt&Blouse'],
+                     ['All','바캉스룩','SET'],
+                     ['레깅스','힐링투엘브','히든밴딩시리즈','스커트','팬츠'],
+                     ['HOLI스윔웨어','at 22`C','바캉스룩']];  //2차원 배열 내부[] 개 당 1배열 {0행0열부터시작}
+      
+        //메인메뉴 갯수만큼 반복문 돌리기
+        // 메인메뉴                  outer  0
+         main_menu.map(function (value, index) {
+            var menuTag ="<li><a href='#'>"+value+"</a><ul>";
+
+               //서브메뉴
+               sub_menu[index].map(function (sub_value, sub_index) {
+                  menuTag+="<li><a href='#'>"+sub_value+"</a></li>";
+                 }); //[index] <- 0번째 행 전체 내용 부터 
+                 /
+                 //반복문끝나고 닫아주기
+                 menuTag+="</ul></li>"
+                 $('#menu').append(menuTag);
+           });
+
+         //--------------------------------------------------
+         //마우스 이벤트
+         $('#menu>li').hover(function(){
+            //마우스 오버일 때 이벤트 발생한 객체의 자식 ul 공개비공개
+            $(this).children('ul').css('display','block');
+         }, function () {
+            // 마우스가 벗어나면
+             $(this).children('ul').css('display','none');
+         });
+
+
+      });
+   </script>
+</head>
+<body>
+   <div class="container">
+      <header>
+         GIRLSDAILY
+      </header>
+      <ul id="menu">
+        
+      </ul>
+      <div class="content">
+         <img src ="../img/c.jpg" style="width: 100%"/>
+      </div>
+   </div>
+</body>
+</html>

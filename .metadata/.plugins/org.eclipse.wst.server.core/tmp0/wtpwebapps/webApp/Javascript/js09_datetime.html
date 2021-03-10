@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>날짜 객체</title>
+	<script>
+	 	 var dateTime = new Date();// 현재 날짜, 시간
+	 	 var dateTime2 = new Date("2021.05.10"); // "2021/06/07" "2021-08-03" 문자열
+	 	 var dateTime3 = new Date(211313131123); // 밀리초 : 1990.01.01.00:00:00
+	 	 
+	 	 document.write("datetime="+dateTime);
+	 	 document.write("<br/>datetime2="+dateTime2);
+	 	 document.write("<br/>datetime3="+dateTime3);
+        
+        /*
+        년 : getFullYear(), 월 : getMonth() -> 1월 = 0 / 2월 = 1, 일: getData()
+        시 : getHours()     분 : getMinutes()     초:getSeconds()
+        요일 : getDay() 일 =0/ 월=1/ ../ 토=6
+        */
+        
+        var timeTxt = dateTime.getFullYear()+"년 ";
+        timeTxt += (dateTime.getMonth()+1)+"월 ";
+        timeTxt += (dateTime.getDate())+"일 ";
+        timeTxt += (dateTime.getHours())+" : " + dateTime.getMinutes()+" : "+dateTime.getSeconds();
+        
+        document.write("</br>", timeTxt);
+        document.write("</br>요일"+dateTime.getDay());
+        
+        // 마지막 날
+        var date =new Date(dateTime.getFullYear(), dateTime.getMonth()+1, 0);
+        document.write("마지막 날--->"+date.getDate());
+        
+	</script>
+
+</head>
+<body>
+	
+</body>
+</html>

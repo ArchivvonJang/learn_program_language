@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>@media 쿼리: 반응형 스타일 지정하기</title>
+<!-- 장치에 맞게 픽셀 정보 조정                                         0~10-->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+		ul,li{
+			margin:0px; padding:0px; list-style-type:none;
+		}
+		li{
+			border:1px solid #ccc; margin:3px; padding:3px; width:45%; float:left
+		}
+		/*반응형 스타일 지정*/
+		/*@media all, screen, print, tv, projection......*/
+		/*320px ~ 600px 일 때, 사용할 스타ㅇ;ㄹ*/  
+		@media all and (min-width:320px) and (max-width:600px){
+			li{
+				background-color:red;
+				color:white;
+			}
+		}
+		@media all and (min-width:601px) and (max-width:800px){
+			li{
+				background-color:lightblue;
+				color:red;
+			}
+		}
+		@media all and (min-width:801px){ /*안쓰면 max는 무제한*/
+			li{
+				background-color:black;
+				color:white;
+			}
+		}
+	</style>
+
+</head>
+	
+<body>
+	<ul>
+		<li> 부동산 13계명을 기억하세요.  </li>
+		<li>1. 무조건 본인이 생각한 예산보다 낮게 말하라.</li>
+		<li>2. 시세에 대해 잘 아는 것처럼 말하라.  </li>
+		<li>3. 혼자서는 결정할 수 없는 것처럼 행동하라.  </li>
+		<li>4. 부동산에 대해 아무것도 모를 경우 부모님이나 어른과 동행하라. </li>
+		<li>5. 주변에서 다른 집을 많이 보고 온 척하라.</li>
+		<li>6. 마음에 들어도 절대 티 내지 마라. </li>
+		<li>7. 싱크대와 세면대의 배수관을 꼭 확인하라.  </li>
+		<li>8. 여름일지라도 보일러가 잘 작동되는지 확인하라.  </li>
+		<li>9. 누수, 곰팡이를 체크하라.</li>
+		<li>10. 집이 왜 나왔는지를 물어보라. 공실이 3개월 이상이면 문제가 있을 가능성이 높다.</li>  
+		<li>11. 일조량을 확인하라. 난방비가 달라질 수 있기 때문.  </li>
+		<li>12. 낮과 밤 둘 다 방문하여 동네가 한적한지 시끄러운지 확인하라. </li> 
+		<li>13. 계약서만큼이나 중요한 중개대상물확인서(중개대상물이 계약과 일치함을 증명하는 문서)를 확인하라.</li>  
+	</ul>
+</body>
+</html>

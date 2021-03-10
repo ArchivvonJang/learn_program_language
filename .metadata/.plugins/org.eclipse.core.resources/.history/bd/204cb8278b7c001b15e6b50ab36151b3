@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+		margin:0px;
+	}
+	#header1, #header2{
+		height:100px; 
+		width:1000px;
+		margin:0 auto;
+	}
+	#header1{
+		background-color:lightblue;
+	}
+	#header2{
+		background-color:pink;
+	}
+	#bar{
+		position:realative; /*현재 위치를 기준(top: 0)*/
+		height:3px; 
+		background-color:blue; 
+		z-index:100;
+	}
+	#content{
+		width:1000px;
+		margin:0 auto;
+		background-color:gray;
+		position:relative;
+	}
+	
+	/*배너*/
+	#leftBanner, #rightBanner{
+		position:absolute;
+		width:100px;
+		background-color:cyan;
+	}
+	#leftBanner{
+		left:-100px;
+		top:0px;/*제일 위로 올라오기*/
+		height:300px;
+	}
+	#rightBanner{
+		left:1000px;
+		top:0px;
+		height:400px;
+	}
+</style>
+
+<script>
+// 하늘색 누르면 사라지게 하기~!
+	function event1(){
+		document.getElementById("header1").addEventListener('click', function(){
+			document.getElementById("header1").style.display="none";
+		});// 클릭이벤트가 발생하면 함수실행
+	}
+//scrollEvent
+	function bannerMove(){
+		// 현재 스크롤 바 위치 
+		var scrollY = window.scrollY;
+		
+		// header의 높이구하기
+		var top = 200; // div header1 + 2 의 높이
+		if(document.getElementById("header1").style.display=="none"){
+			top=100; // 하늘색 없어지면 높이 100됨
+		}
+		// 스크롤바가 top보다 내려갔을 때
+		var bar= document.getElementById("bar").style; // blue line
+		var lBanner=document.getElementById("leftBanner").style; // leftBanner
+		var rBanner=document.getElementById("rightBanner").style; // rightBanner
+		
+		if(scrollY>top){
+			bar.top=scrollY-top+"px";
+			lBanner.top=scrollY-top+"px";
+			rBanner.top=scrollY-top+"px";
+		}else{ // 스크롤바가 
+			bar.top="0px";	
+			lBanner.top="0px";
+			rBanner.top="0px";
+		}
+}
+</script>
+
+</head>
+<body onload="event1()" onscroll="bannerMove()">
+<div id= "header1" ></div>
+<div id="header2"></div>
+<div id="bar"></div>
+<div id="content">
+	<img src="../img/sunset1.jpg"/>
+	<img src="../img/sunset2.jpg"/>
+	<img src="../img/sunset3.jpg"/>
+	
+	<!-- 배너 -->
+	<div id="leftBanner">aaa</div>
+	<div id="rightBanner">bbb</div>
+
+	</div>
+</body>
+</html>

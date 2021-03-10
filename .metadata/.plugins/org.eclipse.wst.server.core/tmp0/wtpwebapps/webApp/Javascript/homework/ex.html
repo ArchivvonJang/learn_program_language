@@ -1,0 +1,146 @@
+<HTML>
+    <HEAD>
+     <TITLE>Rollover +이미지확대보기+ 무브+커서</TITLE>
+     <style type="text/css">
+     body {cursor:url('banner/my-cursor.cur');}
+     .text{
+         font-family:"돋움";
+      font-size: 9pt;
+      }
+     td{font-size: 9pt; line-height: 160%;}
+     #img1{display：none; color:blue;}
+     #img2{display：none; color:blue;}
+     #img3{display：none; color:blue;}
+     #img4{display：none; color:blue;}
+     #img5{display：none; color:blue;}
+     </style>
+    
+     <script language="javaScript">
+     var move_x, move_y, temp_x, temp_y
+     function mouse_dragdrop(){
+        if(event.button==1 && flag_drag==true){
+    div_name2.pixelLeft=temp_x + event.clientX - move_x;
+    div_name2.pixelTop=temp_y + event.clientY - move_y;
+    }
+      }
+     
+      function mouse_drag(div_name){
+      div_name2=eval("document.all." + div_name+ ".style");
+        temp_x = div_name2.pixelLeft;
+     temp_y = div_name2.pixelTop;
+     move_x = event.clientX;
+     move_y = event.clientY;
+     document.onmousemove= mouse_dragdrop;
+     flag_drag=true;
+      }
+     
+      function mouse_up(){
+        flag_drag = false
+     }
+     document.onmouseup=mouse_up;
+    
+      function big_img(str){
+     bigImg=eval("document.all." + str + ".style");
+     bigImg.pixelTop=event.clientY;
+     bigImg.pixelLeft=event.clientX;
+     bigImg.display= "block";
+     }
+     function div_close(str){
+         closeImg=eval("document.all." + str + ".style");
+      closeImg.display="none"
+     }
+    
+     </script>
+    
+    </HEAD>
+   
+    <BODY bgcolor="#FFFFFF" text="#000000">
+     <table width="450" border="0" cellspacing="5" cellpadding="0" align="center">
+      <tr>
+      <td onClick="big_img('img1')"><img src="mon.jpg" width="150" height="130"></td>
+      <td onmouseover=this.style.backgroundColor="#66FF33"
+        onmouseout=this.style.backgroundColor="#FFFFFF" valign="top">*예쁜 그림이 가득~~~!!
+     <br><br>
+     이곳에 오시면 예쁜그림을 마음껏 다운 받으실 수 있습니다.</td>
+    <td onClick="big_img('img2')"><img src="tue.jpg" width="150" height="130"></td>
+     </tr>
+     <tr>
+       <td onmouseover=this.style.backgroundColor="#9999FF"
+        onmouseout=this.style.backgroundColor="#FFFFFF" valign="top">*재미나는 동영상<br><br>
+     재미나고 즐거운 동영상이 가득한 곳입니다.</td>
+   
+       <td onClick="big_img('img3')"><img src="thu.jpg" width="150" height="130"></td>
+       <td onmouseover=this.style.backgroundColor="#FF99FF"
+        onmouseout=this.style.backgroundColor="#FFFFFF" valign="top">*아름다운 이야기....<br><br>
+     이곳에서는 우리들의 아름다운 사랑이야기가 담겨져 있습니다.</td>
+      </tr>
+      <tr>
+     <td onClick="big_img('img4')" ><img src="wed.jpg" width="150" height="130"></td>
+        <td onmouseover=this.style.backgroundColor="#0099FF"
+        onmouseout=this.style.backgroundColor="#FFFFFF" valign="top">*하하~~!! 호호~~!!<br><br>
+     배꼽이 빠지는 이야기들이<br>
+     가득한 곳입니다.<br>
+     배꼽을 잠시 풀어놓고^^...<br><br></td>
+     <td onClick="big_img('img5')"><img src="sat.jpg" width="150" height="130"></td>
+     </tr>
+     </table>
+    <div ID="img1" style="position：absolute; left:10px; top:23px; border:1 solid #FFCC00;
+    background:#FFFF33">
+    <table>
+       <tr onmousedown="mouse_drag('img1')">
+          <td align="right"><img src="close.gif" onClick="div_close('img1')"></td>
+   
+          </tr>
+       <tr>
+         <td><img src="mon.jpg" width="300" height="260"></td>
+       </tr>
+      </table>
+    </div>
+      
+     <div ID="img2" style="position：absolute; left:10px; top:23px; border:1 solid #FFCC00;
+    background:#FFFF33">
+    <table>
+       <tr onmousedown="mouse_drag('img2')">
+          <td align="right"><img src="close.gif" onClick="div_close('img2')"></td>
+   
+          </tr>
+       <tr>
+         <td><img src="tue.jpg" width="300" height="260"></td>
+       </tr>
+     </table>
+    </div>
+     <div ID="img3" style="position：absolute; left:10px; top:23px; border:1 solid #CCFFFF;
+     background:#CCCCFF">
+      <table>
+        <tr onmousedown="mouse_drag('img3')">
+          <td align="right"><img src="close.gif" onClick="div_close('img3')"></td>
+      </tr>
+        <tr>
+       <td><img src="thu.jpg" width="300" height="260"></td>
+      </tr>
+      </table>
+     </div>
+      <div ID="img4" style="position：absolute; left:10px; top:23px; border:1 solid #CCFFFF;
+     background:#CCCCFF">
+     <table>
+       <tr onmousedown="mouse_drag('img4')">
+         <td align="right"><img src="close.gif" onClick="div_close('img4')"></td>
+      </tr>
+       <tr>
+       <td><img src="wed.jpg" width="300" height="260"></td>
+      </tr>
+      </table>
+      </div>
+      <div ID="img5" style="position：absolute; left:10px; top:23px; border:1 solid #CCFFFF;
+     background:#CCCCFF">
+     <table>
+       <tr onmousedown="mouse_drag('img5')">
+         <td align="right"><img src="close.gif" onClick="div_close('img5')"></td>
+      </tr>
+       <tr>
+       <td><img src="sat.jpg" width="300" height="260"></td>
+      </tr>
+      </table>
+      </div>
+    </BODY>
+   </HTML>

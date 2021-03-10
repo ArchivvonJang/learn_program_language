@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#header1, #header2{
+		height:100px; 
+		width:1000px;
+		margin:0 auto;
+	}
+	#header1{
+		background-color:gray;
+	}
+	#header2{
+		background-color:pink;
+	}
+	#bar{
+		height:3px; 
+		background-color:blue;
+	}
+	#content{
+		width:1000px;
+		margin:0 auto;
+		background-color:gray;
+		position:relative;
+		
+			}
+</style>
+</head>
+<body>
+<div id= "header1"></div>
+<div id="header2"></div>
+<div id="bar"></div>
+<div id="content"></div>
+	<img src="img/sunset1.jpg"/>
+	<img src="img/sunset2.jpg"/>
+	<img src="img/sunset3.jpg"/>
+</body>
+</html>

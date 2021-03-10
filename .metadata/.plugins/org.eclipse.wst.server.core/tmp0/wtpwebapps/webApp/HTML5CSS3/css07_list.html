@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="style.css" type="text/css"/>
+	<style>
+		body{}
+		#menu {overflow:auto;}
+		
+		body, ul, li{
+			margin:0px; 
+			padding:0px;
+			/*list-style-position:inside;*/
+			list-style-type:none;
+			/*
+			[ ul, ol의 목록 마커 스타일을 정해줄 수 있음 ]
+			list-style-type : 목록 마커타입 (종류 많음,,찾아볼 것)
+			list-type-img : 목록 마커를 이미지로 정해줄 수 있음.  ex:
+			list-style-position : 목록 마커 위치 정하기( outside, inside ) 
+			list-style : 목록 마커 일괄 지정  ex:  list-style:disc none inside;
+			*/
+			}
+		
+		/*후손 선택자 */
+		#menu li {
+			
+			float:left; /*box 를 오른쪽(right) 또는 왼쪽(left) 순서대로 배치*/
+			width:25%;
+			text-align:center; /* text-align 컨텐츠를 left, center, right 정렬하는 기능*/
+			font-size:2em;
+			height:100px;
+			line-height:100px;/*텍스트 1줄 높이 설정*/
+			border-bottom:2px solid gray;
+			background-color:lightblue;
+		}
+		
+		#menu2 li{
+			background-color:yellow;
+			height:50px;
+			text-align:center;
+			width:150px;
+			line-height:50px; /*menu는 ul태그로 만드는 것을 권장*/
+			
+		}
+	</style>
+</head>
+<body>
+	<ul id = "menu">
+		<li><a href= "#">메일</a></li>
+		<li><a href= "#">뉴스</a></li>
+		<li><a href= "#">판</a></li>
+		<li><a href= "#">TV</a></li>
+	</ul>
+	
+	<ul id = "menu2">
+		<li><a href= "#">메일</a></li>
+		<li><a href= "#">뉴스</a></li>
+		<li><a href= "#">판</a></li>
+		<li><a href= "#">TV</a></li>
+	</ul>
+</body>
+</html>

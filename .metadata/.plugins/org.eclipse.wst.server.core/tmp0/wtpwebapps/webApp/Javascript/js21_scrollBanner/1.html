@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+    body{
+        margin-top: 0;
+    }
+    /*상단 */
+    #blue{
+        background-color: lightblue; 
+    }
+    #pink{
+        background-color: pink;
+    }   
+ 	#pink>input{
+        font-size:1em; 
+        width:250px; 
+        height:40px;}
+    
+    #pink, #blue{
+        width: 500px; 
+        height: 100px; 
+        padding: 0; 
+        margin-left:670px; 
+        float: center;
+    }
+     /*파란색 라인 */
+    
+    #line{
+        background-color: blue; 
+        height:3px;  
+        position:sticky; 
+        top:0px;
+       
+    }
+    
+    
+
+     /*이미지와 배너*/
+    #center{
+        float:left;
+        margin-left:570px; 
+        padding: 0;
+       /* display: inline-block;*/
+         display: inline-flex;
+    }
+    #leftBn{
+        background-color: yellow; 
+        width: 100px;height:300px; 
+        position:sticky; 
+        float:left; 
+    }
+    #sunset{
+      width: 500px; 
+      height: 100%; 
+      position:sticky; 
+      float:left; 
+    }
+    #rightBn{
+        background-color: orange; 
+        width: 100px;  
+        height: 400px; 
+        position:sticky; 
+        float:left; 
+    }
+    .sticky_box{position:sticky; top:2px; height:100px; background-color:white;}
+    
+    /* position: sticky - 평소 문서 안에서 position:static상태지만 스크롤 위치가 어느 지점에 이르면 position:fixed와 같이 화면에 고정
+    /* You must specify a threshold with at least one of top, right, bottom, or left for sticky positioning to behave as expected.*/
+    
+</style>
+
+<script>
+	var text = "자바스크립트로 레이아웃 연습중";
+	var t = text.split("");
+	var i = 0;
+    
+	function textBox(){
+		var tag = document.getElementById("textbox");
+		tag.placeholder+=t[i];
+		i++;
+		if(i>t.length){
+			tag.placeholder="";
+			i=0;
+		}
+	}
+    function fixedLine(){
+        
+    }
+
+    
+</script>
+</head>
+<body  onload="setInterval('textBox()', 300)">
+   <!--전체 wrap -->
+    <div id="wrapper">
+          <!--하늘색 분홍색 -->
+        <div id="header">
+            <div id="blue" onclick="this.style.display='none'"></div>
+            <div id="pink"><input type="text" id="textbox"/></div>    
+        </div>
+        
+         <!--파란색 라인-->
+        <div id="line"> </div>
+        
+        <!--이미지와 배너 -->
+        <div id="center">
+            <div id="leftBn" class="sticky_box">aa Banner</div>            
+            <div id="sunset">
+                <script>
+                    for(var i=1; i<10; i++){
+                        document.write("<img src='img/sunset"+i+".jpg'>");
+                    }
+                </script> 
+            </div>
+            <div id="rightBn" class="sticky_box">b Banner</div>
+        </div>
+        
+        
+    </div>
+
+</body>
+</html>

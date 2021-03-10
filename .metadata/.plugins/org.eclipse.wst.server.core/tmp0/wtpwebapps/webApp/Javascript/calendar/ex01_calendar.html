@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+    //210302 강사님 풀이, 수업
+    function setDate(){
+        // 현재 날짜 정보
+        var nowDate = new Date();
+        var year = nowDate.getFullYear();
+        var month= nowDate.getMonth()+1;
+        //이번 달 첫 날
+        nowDate = new Date(year, month-1,1); // 1일에 대한 요일 구하기 
+        var week = nowDate.getDay();// 요일 0=일 1=월
+        // 마지막 날
+        var lastDay = new Date(year, month,0).getDate();//마지막 날, 다음달의 1일의 전날
+        
+        //년월 출력
+        document.getElementById("title").innerHTML=year+"년"+month+"월"// title 위치에 년, 월을 출력
+        
+        //날짜
+        // 요일
+        var weekName=['일','월','화','수','목','금','토']; // 초기값 주는 법- 대괄호
+        // 반복문
+        var dayData="";
+        for(var i = 0; i<weekName.length; i++){ //일~토
+            dayData+="<li>"+weekName[i]+"</li>";
+            
+        }
+        // 공백문자 
+        for(var i = 0; i<week ; i++){
+            //공백 글자를 데이터 dayDate에 연결시켜준다
+            dayData+="<li>&nbsp;</li>";//&nbsp 공백문자
+        }
+        // 1일부터 마지막날까지 ul에 담기 
+        for(var d=1; d<=lastDay; d++){
+            dayData+="<li>"+d+"</li>";
+        }
+        document.getElementById("day").innerHTML=dayData;
+    }
+    
+</script>
+
+<style>
+    ul, li{
+        margin:0; padding:0; list-style-type: none; 
+    }
+    #cal{
+        width: 500px; 
+    }
+    #cal>img{
+        width:  500px;
+    }
+    #title,#day>li{
+        text-align: center;
+    }
+    #day>li{
+        float:left;
+        width: 14.2%;
+    }
+</style>
+</head>
+<body onload="setDate()">
+ <div id="cal">
+     <img src ="spring.jpg"/>
+     <h1 id= "title"></h1>
+     <ul id="day"></ul>
+ </div>
+</body>
+</html>

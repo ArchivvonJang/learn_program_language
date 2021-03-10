@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+	 body{ background:white;}
+	</style>
+</head>
+<body>
+	<img src="title_layer.gif" style="width:400px; height:400px; margin:0; padding:0;"/>
+	<img src="glass1.gif"/>
+	<img src="glass2.gif"/>
+	<img src="glass3.gif"/>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1> 표 만들기</h1>
+<pre> 
+	<b>[태그]</b>
+
+	table : 표의 시작, 표 전체
+	tr : 1줄 생성
+	td : 1칸 생성
+	th : 강조하고 싶은 줄에 td대신에 th 사용(글자가 칸의 가운데 정렬됨, 글자 진하게 )
+	
+	<b>[열(column) 단위로 처리]</b>
+	
+	colgroup
+	col : 각 칸 단위 , 각 1열
+	span : 같은 스타일 적용 "어디 칸까지"
+	
+	<b>[표 구성]</b>
+	
+	caption: 표의 제목
+	thead : 표의 맨 상단
+	tbody : 표의 내용
+	tfoot : 표의 맨 하단 
+	
+	<b>[속성]</b>
+	
+	width, height : px, %
+	
+</pre>
+
+<table border = "1" width = "100%" style="color:green">
+	<caption><h1>표의 제목</h1></caption>
+	<colgroup>	
+		<col span ="2" style="background-image:url(../img/sky.jpg)"/>
+		<col style = "background:yellow"> 
+	</colgroup>
+
+	<thead> <!-- 표 상단 -->
+	<tr heigth= "100" style="color:white">
+		<th >tr은 줄전체 th는 칸, 첫번째 칸 해당칸에만 넓이 부여(칸의 폭) </th>
+		<th style = "background-color:red">red=#ff0000 inLine styleSheet 두번째 칸</th>
+		<th> 세번째 칸</th>
+	</tr>
+	</thead>
+	<tbody> <!-- 표 내용 -->
+	<tr>
+		<td> 두번째 줄 1번째 칸 </td>
+		<td> 2번째 칸 <img src="../img/clouds.jpg" width ="100"/></td>
+		<td> 2행3열 </td>
+	</tr>
+	</tbody>
+	<tfoot> <!-- 표 하단 -->
+	<tr>
+		<td> 두번째 줄 1번째 칸 </td>
+		<td> 2번째 칸 <img src="../img/clouds.jpg" width ="100"/></td>
+		<td> 2행3열 </td>
+	</tr>
+	</tfoot>
+</table>
+</body>
+</html>
