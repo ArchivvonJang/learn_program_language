@@ -23,6 +23,9 @@
 		<list key="C:\Users\suyun\git\Frontend\.git">
 			<item value="empty"/>
 		</list>
+		<list key="C:\Users\suyun\git\Frontend\.project\.git">
+			<item value="empty"/>
+		</list>
 	</section>
 	<section name="org.eclipse.egit.ui.internal.repository.CreateBranchPage$SourceSelectionDialog.dialogBounds">
 		<item key="DIALOG_X_ORIGIN" value="0"/>
