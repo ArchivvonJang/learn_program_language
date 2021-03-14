@@ -1,6 +1,0 @@
-COLON=\#80ff80 | null | false | false | false | false
-COMMENT=\#c0c0c0 | null | false | true | false | false
-PROPERTY_NAME=\#6cc6fb | null | false | false | false | false
-URI=\#ffd5aa | null | false | true | false | false
-eclipse.preferences.version=1
-newFileTemplateName=New CSS File

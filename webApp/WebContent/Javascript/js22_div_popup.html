@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #content{
+            width: 1000px; margin: 0 auto;
+        }
+        #content>img{width: 480px;}
+
+        /*팝업스타일*/
+        #popup{
+            width: 300px;
+            border:1px solid gray;
+            background-color: white;
+            position:absolute;
+
+        }
+        #popup>div{
+            float: left;
+        }
+        #pTitle{ /*이벤트팝업 창 - 제목 바*/
+            width: 90%;
+            height: 40px;
+            line-height: 40px;
+            background-color:darkseagreen;
+        }
+        #pClose{
+            width: 10%;
+            height:40px;
+            line-height: 40px;
+            text-align:center;
+            background-color: tomato;
+        }
+        
+    </style>
+    <script>
+        //팝업창 만능 변수
+        var popup;
+
+        function setXY(){  // 팝업창 좌표
+            popup= document.getElementById("popup").style;
+            popup.left="300px";
+            popup.top="200px";
+
+            // 쿠키 넣기
+
+        }
+        //팝업 닫기
+        function setPopupClose(){ //x 누르면 팝업 닫히는 이벤트
+            popup.display="none";
+
+        }
+        //제목 바에 마우스가 눌려지는 시점 onmousedown 일 때, 드래그되어야함
+        //팝업 이동
+     var eventX, eventY, moveX, moveY, flag=false; //false상태에서 출발
+      function setMoveStart(){
+        // 드래그 시작
+        flag =true;
+
+        //마우스를 누르면 이벤트가 발생한 곳의 x, y 좌표를 구한다.
+         eventX = event.clientX;
+         eventY = event.clientY; //clientY 클릭한 곳의 좌표
+         
+         //팝업창의 좌표 구하기
+        divX = parseInt(popup.left);
+        divY = parseInt(popup.top);
+
+        console.log('divX ->', divX, 'divY->', divY); // div의 스타일시트값을 가져와서 px 이 붙어있음 정수로 변경해줘야함
+         console.log('eventX->',eventX, 'eventY', eventY);
+         
+
+         //마우스를 이동하면 onmousemove, 이동한 곳 이벤트 x,y 좌표를 구한다.
+         document.onmousemove = setMouseDrag; // 움직이면 아래 함수 호출
+      }
+      function setMouseDrag(){
+        if(flag){
+
+            console.log('aaa'); // 마우스로 끌기만해도 엄청 출력됨
+            moveX = event.clientX; //나중에 발생한 이벤트 좌표
+            moveY = event.clientY;
+
+            // 나중에 발생한 이벤트 좌표 (moveX)- 이전에 발생한 이벤트 좌표 (eventX)= 이동한 거리
+            var x = moveX - eventX;
+            var y = moveY- eventY;
+
+            // 팝업 이동하기
+            popup.left = divX+x+"px";
+            popup.top=divY+y+"px"; // 원래 값+이동한 값= 세팅 px
+        }
+      }
+      function setFlag(){
+          flag=false;
+      }
+      // mouset 누르면 setmovestart로 이동 이동하면 flag를 true로 변경
+      document.onmouseup = setFlag; // 마우스 놓으면, false로 변경 
+
+
+      // cookie
+      function closeBtn(){
+          if(document.getElementById("cookieCheck").checked){
+              var now = new Date();
+              now.setDate(now.getDate()+1);
+
+              document.cookie="event=24h; path=/; expires="+now+";";
+          }
+          self.close();
+      }
+      // cookie 소멸 지정
+      function popupOpen(){
+          var cookie=document.cookie;
+          if(cookie.indexOf("event")==-1){
+              window.open("popup","w");
+          }
+      }
+    </script>
+</head>
+<body onload="setXY(); popupOpen()">
+    <div id="content">
+    <h1>Div를 이용한 팝업 만들기</h1>
+    <!--영화포스터 슬라이더 갖고오기-->
+    <iframe src="js20_imageSlider/js20_imageSlider.html" width="920px" height="134px" frameborder="0"></iframe>
+    <hr/>
+    <img src="../img/1.png"/>
+    <img src="../img/11.png"/>
+    <img src="../img/3.png"/>
+    <img src="../img/4.png"/>
+    <img src="../img/5.png"/>
+
+    </div>
+<!--팝업 div 만들기-->
+<div id="popup">
+    <div id="pTitle" onmousedown="setMoveStart()"><!--제목-->이벤트</div>
+    <div id="pClose" onclick="setPopupClose()">X</div> <!--닫히는 이벤트-->
+    <div>
+        <!--컨텐츠-->
+        <img src ="../img/cat.png"/>
+    </div>
+    <div id="Pcookie">
+    <input type="checkbox" id="cookieCheck"/>
+	하루동안 열지 않기
+	<input type="button" id="closeBtn" value="Close" onclick="closeBtn()"/>
+    </div>
+</div>
+</body>
+</html>
