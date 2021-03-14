@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>jquery에서 스타일시트 클래스를 조작하는 함수</title>
+    <style>
+        .c0{ width:150px; height: 150px;}
+        .c1{border: 2px solid lightseagreen }
+        .c2{ border: 2px dotted lightcoral;}
+        .c3{border: 2px dashed cornflowerblue;}
+        .c4{border: 2px double lavender;}
+    </style>
+    <script>
+        $(function(){
+            // jquery에서 스타일시트 클래스를 조작하는 함수
+            // addClass() : 객체에 클래스를 추가 (body에서 적용안하고 jquery로 적용)
+            $('img').addClass('c0');// 선택자가 이미지 에 어떤 클래스를 적용할 것인지
+
+            // 첫번째 이미지에만 c1 class적용
+            $('img:first').addClass('c1');
+
+            //3번 이미지(index 2번째)에 c3 class 적용
+            $('img').eq(2).addClass('c3');
+
+            //짝수번째에 c2 class 적용
+            $('img:odd').addClass('c2');// index 기준으로 0123으로 잡힘, 사진 2번째 4번째에 적용하려면 홀수로 적어야함
+
+            // 클래스 지우기
+            // removeClass() : 객체에서 클래스 지우기 
+            $('img:first').removeClass('c1'); // first img에 c1 class 제거
+
+            // toggleClass() :  객체에 클래스가 있으면 지우고, 없으면 추가 
+            $('img').toggleClass('c3');// c3가 있는 곳은 지워지고 없는 곳은 추가
+
+            // hasClass() : 객체에 클래스가 있는지(true) 없는지 (false) 확인
+
+            // 클래스 존재유무를 판별하고 val을 활용하여 input에 값을 찍어보기
+            // 이미지 중에 마지막에 있는 것, c1 클래스 있는 지 확인
+            var result= $('img:last').hasClass('c1'); // c1이 있냐? 
+            //$('#username').attr('value', result); //id username에 value를 result변수로 세팅(attribute)
+            $('#username').val(result); // 위와 동일함
+
+            
+
+        });
+
+    </script>
+</head>
+<body>
+    <!--스타일시트 선택자 중에 클래스 어쩌구,,-->
+    <input type="text" name ="username" id="username"/> <!--input가 가지고 있는 속성 'value' -> val jq07참조-->
+    <hr/>
+    <div></div>
+    <img src="../img/11.png" />
+    <img src="../img/cat.png"/>
+    <img src="../img/9.png"/>
+    <img src="../img/8.png"/>
+</body>
+</html>

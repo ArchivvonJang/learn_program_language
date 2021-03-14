@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>속성 선택자t</title>
+    <script>
+        $(function(){
+            //속성 선택자
+            // a 태그에 title이라는 속성이 있으면 선택 나머지는 선택 xxx
+            $('a[title]').parent().css('background-color','pink'); // a태그 title의 부모에 표시
+
+            // a 태그에 href속성의 값이 https:// www.naver.com같은 객체 선택
+            $("a[href='https://www.naver.com']").css('font-size','2em');
+
+            // ^= : 특정문자로 시작하면 선택
+            $("a[href^='https'").css('background-color','lightgreen');// https로 시작하면
+       
+            //$= :특정 문자로 끝나면 객체 선택
+            $('a[href$="com"]').css('background-color','lightblue');// com으로 끝나면 
+
+            //*= : 특정 문자가 포함되면 객체 선택
+            $('a[href*="na"]').css('color','red');// na가 포함되어있으면
+
+            $('a[class=best]').css('font-size', '3em').css('padding', '7px'); //class =best
+        });
+        function startScript(){
+            console.log('함수 실행 됨....');
+        }
+    </script>
+</head>
+<body>
+ <ul>
+     <li ><a href="https://www.nate.com" class="test">네이트</a></li>
+     <li ><a href="https://www.daum.net" class="best">다음</a></li>
+     <li  ><a href="https://www.naver.com" class="test">네이버</a></li>
+     <li ><a href="https://www.jquery.com" title="제이쿼리 홈페이지로 이동합니다.~~~~!~!~!" class="best">제이쿼리</a></li>
+     <li><a href="https://wwww.spring.io" class="test">스프링프레임워크</a></li>
+     <li ><a href="http://www.w3schools.com"class="best">w3schools</a></li>
+     <li ><a href="mailto:goguma777@nate.com">메일보내기</a></li>
+    <!--페이지 이동 x 자바스트립트 함수 호출ㅇ-->
+     <li><a href ="javascript:startScript()">자바스크립트 실행하기</a></li>
+     
+ </ul>   
+</body>
+</html>

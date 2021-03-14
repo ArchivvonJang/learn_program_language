@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--
+        jquery 는 javascript 라이브러리다.
+
+        http:// www.jquery.com 에서 다운로드
+
+        javascript 함수 는 호출해줘야 실행
+        jquery 는  html css js 순 실행 후 이벤트에 의해 자동호출
+
+        html/ css/ javascript 실행 후  jquery 실행
+        javascript 이벤트는 jquery  실행 후 실행됨
+    -->
+<script src="lib/jquery-3.6.0.min.js"></script> <!--제이쿼리 링크 걸어주기 -->
+<script>
+    alert("자바스크립트");
+  
+    // jquery 코드
+    //$(선택자)  이벤트 종류 document 라는 객체가 ready 이벤트가 (바디실행이끝나면) 발생하면
+    //           이벤트 종류 : body 실행이 끝나면 jquery ready 이벤트 발생
+    $(document).ready(
+        function(){
+            // jquery 실행부
+            //alert("jquery 실행부");
+            console.log('ready...');
+        } // html css js 끝나면 실행
+    );
+
+</script>
+</head>
+<body>
+<!--<body onload="alert('onload실행됨....'); console.log('onload')"> -->
+<h1>html 문서 ...</h1>
+
+</body>
+</html>

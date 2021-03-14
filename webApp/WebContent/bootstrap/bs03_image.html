@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>21-03-12 이미지에 관련된 부트스트랩</title>
+<meta name='viewport' content='width=divice-width, initial-scale=1'/>
+<link rel= 'stylesheet' href='lib/bootstrap.css' type='text/css'/>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+<script src='lib/bootstrap.js'></script>
+
+  <style>
+      img{
+          width: 300px;
+          height: 300px;
+      }
+      img{
+          background-color: lightseagreen;
+          margin: 10px;
+      }
+  </style>
+
+   <script>
+      $(function(){
+         
+      });
+   </script>
+</head>
+<body>
+    <!--
+        .rounded: 가장자리 둥글게
+        .rounded-circle : 이미지를 둥글게
+        .img-thumbnail :가장자리에 라인있는 이미지
+
+    -->
+    <div class="container">
+        <img class ="rounded" src="../img/cat9.png"/>
+        <img class="rounded-circle" src="../img/cat4.png"/>
+        <img class= "img-thumbnail" src="../img/cat7.png"/>
+        <img class= "img-thumbnail rounded-circle" src="../img/cat7.png"/>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>Document</title>
+<meta name='viewport' content='width=divice-width, initial-scale=1'/>
+<link rel= 'stylesheet' href='lib/bootstrap.css' type='text/css'/>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+<script src='lib/bootstrap.js'></script>
+
+  <style>
+      .alert-tomato{
+          background-color: tomato;
+      }
+  </style>
+
+   <script>
+      $(function(){
+         
+      });
+   </script>
+</head>
+<body>
+    <div class="container">
+<!--
+    .alert :경고창 만들기
+    .alert 색상: success, .alert-info, .alert-warning, .alert-danger.......
+-->
+    <div class="alert alert-danger" >대화상자 띄우기</div>
+    <div class="alert alert-info">
+<!--
+    닫기 기능 추가
+    data-dismiss = "alert" : x를 선택하면 alert가 닫힌다.
+    .close : x가 오른쪽 끝으로 옮겨짐 
+-->
+        아이디를 입력하세요
+        <a href ="#" data-dismiss="alert" class="close">&times;</a>
+    </div>
+    <div class="alert alert-tomato">
+        <a href ="bs04_jumbotron_table.html">클릭하세요</a>
+    </div>
+    alert bottom 에 여백
+  </div>
+</body>
+</html>

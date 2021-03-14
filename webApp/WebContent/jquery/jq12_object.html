@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        div{
+            border: 2px solid rosybrown; margin: 5px;
+        }
+    </style>
+    <script>
+        $(function(){
+            // 객체 조작 메소드 
+            // wrap(): 선택자를 특정태그로 각각 감싼다.
+            $('.c1').wrap('<h1/>');
+
+            // wrapAll() : 선택자를 특정 태그로 한번에 감싼다.
+            $('.c2').wrapAll('<div/>'); // c2 class를 div 로 한번에 싼다.
+
+            //wrapInner(): 선택자의 내용을 특정 태그로 감싼다. $(선택자).wrapInner(변경내용)
+            $('.c2' ).wrapInner('<b/>'); //내용: 객체 조각 메소드 3 객체조각 메소드 4
+
+            // unwrap() : 선택자의 부모 객체를 삭제하낟.
+            $('.c2').unwrap();
+
+            //each (): 반복자 객체를 순서대로 처리한다.
+            $('#lst>li').each(function (idx, obj){
+                // li가 7개니까 7번 반복실행
+                // idx는 index를 가짐 idx= 0,1,2,3,4,..6
+                // obj 는 선택자 태그 obj = li, li, li,li,...,li
+                var txt = '<b>each()를 이용한 반복 객체 조작 ( index :'+idx+')</b>';
+                $(obj).html(txt);
+            });//7개의 li 태그 each(함수)
+
+            //map() : 배열을 이용한 반복처리 
+            var arrList=['걷기','달리기','스케이트보드','자전거','서핑','배구','골프','배드민턴','승마'];
+
+            //select 문에 옵션으로 넣기
+            var tag="<select name ='hobby'>";
+            // 배열명.map(function(v (value 값), i(index)){});
+            arrList.map(function(v,i){
+                tag+="<option value='"+v+"'>"+v+"( idx: "+i+")</option>";
+            }); // for문없이 map()함수로 반복문돌리기
+            tag+="</select>";
+            // body prepend제일 앞에 
+            $('body').prepend(tag);
+
+        });
+    </script>
+</head>
+<body>
+    <div class="c1">객체 조작 메소드 1</div>
+    <div class="c1">객체 조작 메소드 2</div>
+    <div class="c2">객체 조작 메소드 3</div>
+    <div class="c2">객체 조작 메소드 4</div>
+    <ul id="lst">
+        <li>객체 조작 메소드 AAAA</li>
+        <li>객체 조작 메소드 BBBB</li>
+        <li>객체 조작 메소드 CCCC</li>
+        <li>객체 조작 메소드 DDDD</li>
+        <li>객체 조작 메소드 EEEE</li>
+        <li>객체 조작 메소드 FFFF</li>
+        <li>객체 조작 메소드 GGGG</li>
+
+    </ul>
+</body>
+</html>

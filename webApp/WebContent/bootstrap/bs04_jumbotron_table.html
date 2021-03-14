@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>Document</title>
+<meta name='viewport' content='width=divice-width, initial-scale=1'/>
+<link rel= 'stylesheet' href='lib/bootstrap.css' type='text/css'/>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+<script src='lib/bootstrap.js'></script>
+
+  <style>
+        .jumbotron{
+            padding:20px 10px ;
+         
+        }
+  </style>
+
+   <script>
+      $(function(){
+         
+      });
+   </script>
+</head>
+<body>
+    <div class="contianer">
+        <!-- 
+            .jumbotron : padding, 둥근 사각형, 회색배경이 설정된 클래스  
+        -->
+        <div class="jumbotron">
+            “우리가 영원히 머무를 수 없다는 걸 더 명확하게 깨달을수록 진정으로 중요한 것들이 강조되죠. 지금보다 더 만족스러운 삶을 살기 위한 변화도 모색하게 될 테고요”. 
+            그들에게 컨설턴트 심리학자 마이클 싱클레어(Michael Sinclair) 박사의 조언을 들려주고 싶다. “우리가 영원히 머무를 수 없다는 걸 더 명확하게 깨달을수록 진정으로 중요한 것들이 강조되죠. 평소 돌아보지 못했던 우리의 가치를 반성할 수 있을 거예요. 지금보다 더 만족스러운 삶을 살기 위한 변화도 모색하게 될 테고요.” 켄터키 대학의 한 연구에 따르면 ‘죽음에 대한 생각이 삶에 대한 더 큰 열정을 불러일으킬 수 있다’고 한다. 죽음에 직면했을 때 우리의 잠재의식은 긍정적 감정을 소환하려 애쓴다는 것. 
+        </div>
+
+        <!--
+            .table : 표에 적용된 line을 표시한다.
+            .table table-striped : 줄단위 배경색
+            .table table-borderd : 표에 선을 표시한다.
+            .table table-hover : 마우스 오버 아웃시 배경색 변경.
+            .table table-dark : 표에 배경을 블랙으로
+
+        -->
+        <table class="table table-dark table-hover">
+            <tr>
+                <td>번호</td>
+                <td>이름</td>
+                <td>연락처</td>
+            </tr>
+            <tr>
+                <td>100</td>
+                <td>연노랑</td>
+                <td>010-1113-8888</td>
+            </tr>
+            <tr>
+                <td>200</td>
+                <td>진파랑</td>
+                <td>010-1141-6666</td>
+            </tr>
+            <tr>
+                <td>300</td>
+                <td>박보라</td>
+                <td>010-1311-2322</td>
+            </tr>
+            <tr>
+                <td>400</td>
+                <td>김연두</td>
+                <td>010-1116-2662</td>
+            </tr>
+            <tr>
+                <td>500</td>
+                <td>정그린</td>
+                <td>010-1165-2660</td>
+            </tr>
+            <tr>
+                <td colspan="3">문의 사항은 000-000-000 으로 연락바랍니다. </td>
+            </tr>
+        </table>
+
+        <!--
+           테이블의  색상(배경색) 지정
+           .table-primary : light blue
+           .table-success : light green
+           .table-danger : light red
+           .table-info : 밝은 청록색
+           .table-warning : yellow
+           .table-active :gray
+           .table-secondary :gray
+
+
+        -->
+        <table class="table">
+            <tr class="table-primary">
+                <td>번호</td>
+                <td>이름</td>
+                <td>연락처</td>
+            </tr>
+            <tr class="table-success">
+                <td>100</td>
+                <td>연노랑</td>
+                <td>010-1113-8888</td>
+            </tr>
+            <tr class="table-danger">
+                <td>200</td>
+                <td>진파랑</td>
+                <td>010-1141-6666</td>
+            </tr>
+            <tr class="table-info">
+                <td>300</td>
+                <td>박보라</td>
+                <td>010-1311-2322</td>
+            </tr>
+            <tr class="table-warning">
+                <td>400</td>
+                <td>김연두</td>
+                <td>010-1116-2662</td>
+            </tr>
+            <tr class="table-active">
+                <td>500</td>
+                <td>정그린</td>
+                <td>010-1165-2660</td>
+            </tr>
+            <tr class="table-secondary">
+                <td colspan="3">문의 사항은 000-000-000 으로 연락바랍니다. </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

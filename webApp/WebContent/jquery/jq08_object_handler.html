@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+<script>
+    $(function(){
+        // 내가 원하는 문자를 넣고 싶을 때 text html - innnerHTML 
+        var tag="<img src='../img/11.png'/><div>글자</div>"; //문자열 을 가운데에 넣는데 텍스트로 넣으면 이미지x 
+        $('#result').html(tag); // result에 넣을 변수값 - 을 괄호에 넣으며 ㄴ그거 ㄹ보여주고,
+
+       console.log( $("#result").html()); // 괄호안의 값이 없으면 지금 가지고 있는 값을구해줌
+        
+       $('#result').text(tag); // 이렇게 쓰면 텍스트만 나옴
+       console.log($('#daum1').text());// 이렇게 치면 객체 조작1이라고 콘솔에 찍힘 
+
+       
+       // 속성 추가
+       //$("h2>a")
+       $("h2").children('a').attr('href','http://www.nate.com');
+       $("h2>a").attr('target','_blank');// target 창 새로 여는 것 
+
+       // 속성지우기
+       //$('h2').children('a').attr('href',''); // 속성명 값
+       $('a').removeAttr('href'); // 속성명 값x 링크 자체가 없어짐 atag는 남아있음
+    });
+</script>
+</head>
+<body>
+    <h1 id="daum1">객체 조작1</h1> 
+    <h2 ><a href ="">객체 조작2</a></h2> <!--값을 넣었다가 뺐다가,,,-->
+    <div id ="result"></div>
+</body>
+</html>

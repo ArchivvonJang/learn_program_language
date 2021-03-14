@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+<script>
+    $(function(){
+        // 위치 선택자 
+        $('ol>li:first').css('color','yellow');// li 중에 첫번째 객체 선택  
+        $('ol>li:last').css('color','blue');// li 중에 마지막 객체 선택  
+
+        //짝홀수
+        $('ol>li:even').css('background-color','tomato');// index => 0번째 부터 짝수
+        $('ol>li:odd').css('background-color','lightblue');// index => 0부터 홀수
+
+        //nth-last-of-tyle() 마지막에서 순서대로 선택 
+        $('ol>li:nth-last-of-type(3)').css('color','green');
+        $('ol>li:nth-child(3n)').css('border-bottom','4px solid white')//3의 배수;
+
+        // slice():index 위치에서 끝까지 객체 선택
+        $('ol>li').slice(3).css('font-size', '3em'); //3부터 끝까지
+
+        //eq():index 위치의 객체를 선택 
+        $('ol>li').eq(3).css('color','red');
+
+        // :lt() : index위치보다 작은 위치 선택
+        $('ol>li:lt(4)').css('font-family','궁서체'); //4보다 작은 위치 3
+
+        // :gt() : index 위치보다 큰 위치
+        $('ol>li:gt(4)').css('color','cyan');// index4보다 큰 위치 4이후~~
+
+        //부모객체 중에서 자손이 1개인 객체 선택
+        $('li:only-child').css('background-color','yellow').css('border','2px solid darkcyan'); // li의 부모객체(ol ul) 중에 자손태그가 하나만 있는 것 ul의 li!
+    
+        
+    });
+</script>
+</head>
+<body>
+    <ol>
+        <li>html</li>
+        <li>css</li>
+        <li>javascript</li>
+        <li>jquery</li>
+        <li>bootstrap</li>
+        <li>ajax</li>
+        <li>jsp(java server page)</li>
+        <li>spring framenetwork</li>
+    </ol>
+    <ul>
+        <li>위치 선택자 </li>
+    </ul>
+</body>
+</html>

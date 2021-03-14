@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>상태 선택자</title>
+    <script>
+        $(function(){
+            // 상태 선택자
+            // :text -> 속성값이 text인 객체를 선택한다.
+            $(":text").css("background-color","pink");
+
+            // : checked -> 
+            // checked된 속성값 해제
+            $(":checked").attr('checked', false);// 체크된 값이 있어야함, true false는 따옴표 xxx
+            
+            // selectedIndex -> 선택된 목록의 index
+            console.log($("#site").prop('selectedIndex') ,$('#site').val() ); //콘솔에 2 "nate"찍힘
+
+            // : selected
+            $(":selected").attr('selected', false);
+
+            //컨텐츠 선택자
+            $('p').css("margin","10px").css('padding','10px').css('border','3px green solid');
+        
+            // contains(): 특정 문자열이 포함된 경우 선택
+            $("p:contains('여성')").css('background-color','lightsalmon');
+            
+            // has() : 하위에 특정 태그가 포함되면 선택
+            $("p:has('b')").css('color','white');// p 태그 안에 b 태그가 있으면 선택
+            
+            // not() : 특정 선택자를 제외한 나머지를 선택한다.
+            $("p:not(:first)").css('color','lightgreen');//p 태그중에 처음 것을제외한 나머지 
+            
+            // closest() : 조상선택자
+            $("i").closest('body').css('border', '3px dashed green');
+
+            //filter()  p에서 자손 c1 을 걸러냄 
+            $('p').filter('.c1').css('text-decoration','underline'); // class="c1"만 밑줄이 생김
+       
+            //contents() : 선택자의 하위 내용이 다른 태그에 포함된 경우
+            $('p').contents().css('font-size','2em'); // bold italic 글씨 2em 으로 변경됨
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <p>
+            1908년 미국에서는 여성 노동자들의 대규모 시위가 벌어졌습니다. 
+            여성은 투표권이 없었고, 교육받을 기회가 없었으며, 불평등한 임금을 받았습니다. 
+            시위를 기점으로 1911년 3월 8일 일부 유럽 국가부터<b> 여성의 날을 기념하기 시작했고, 한국에서는 1985년부터 공식적으로 여성의 날을 지정했습니다.</b>
+             여성의 현실을 알리고 문제의식을 공유하는 날을 맞이해 브랜드에서 펼친 선한 캠페인을 소개합니다.
+ 
+        </p>
+        <p class="c1">
+            CIC(Company In Company) 체제를 도입해 음악·영상·디지털 등 콘텐츠 사업을 중심으로 한 ‘M 컴퍼니’는 김성수 대표가, 웹툰·웹소설 등 스토리 IP와 플랫폼 사업을 중심으로 한 ‘페이지 컴퍼니’는 이진수 대표가 맡는다. 이진수 대표는 카카오엔터테인먼트의 글로벌 사업도 겸임한다. CIC간 시너지 극대화를 위해 대표 직속으로 신설한 ‘시너지센터’는 카카오M 경영지원부문을 총괄해온 권기수 부문장이 이끈다. 카카오엔터테인먼트는 강력한 원천 IP와 톱 크리에이터, 플랫폼 네트워크를 기반으로 한 사업 다각화를 추진해 내수 시장은 물론 글로벌 진출에 박차를 가할 전망이다.
+        </p>
+        <p class="c1">
+            1908년 미국에서는 여성 노동자들의 대규모 시위가 벌어졌습니다. 
+            여성은 투표권이 없었고, 교육받을 기회가 없었으며, 불평등한 임금을 받았습니다. 
+            시위를 기점으로 1911년 3월 8일 일부 유럽 국가부터 여성의 날을 기념하기 시작했고, 한국에서는 1985년부터 공식적으로 여성의 날을 지정했습니다.
+            <i>여성의 현실을 알리고 문제의식을 공유하는 날</i> 을 맞이해 브랜드에서 펼친 선한 캠페인을 소개합니다.
+ 
+        </p>
+    </div>
+
+    <form>
+        <ul>
+            <li><label>이름</label></li>
+            <li><input type="text" name="username" id="username"/></li>
+            <li><label>연락처</label></li>
+            <li><input type="text" name="tel" id="tel"/></li>
+            <li><label>사용동의여부</label></li>
+            <li>
+                <input type="radio" name="accept" value="yes" checked/> 동의
+                <input type="radio" name="accept" value="no"/> 동의안함
+            </li>
+            <li><label>자주가는 사이트</label></li>
+            <li>
+                <select name="site" id="site">
+                <option value="not"> ==직접선택==</option>
+                <option value="daum"> 다음</option>
+                <option value="nate" selected> 네이트</option>
+                <option value="naver"> 네이버</option>
+                </select>
+            </li>
+            <li>
+                <input type="button" value="확인"/>
+            </li>
+        </ul>
+    </form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <title>21-03-12</title>
+   <!--
+        getbootstrap.com 다운로드
+
+        1. viewport 설정
+        2. bootstrap 스타일시트
+        3. jquery script
+        4. bootstrap script
+
+
+
+   -->
+   <meta name="viewport" content="width=divice-width, initial-scale=1"/>
+   <link rel= "stylesheet" href="lib/bootstrap.css" type="text/css"/>
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+   <script src="lib/bootstrap.js"></script>
+   <style>
+       /*bootstrap의 container class를 다시 설정*/
+       .container{   /* 반응형 컨테이너 클래스 : window의 크기에 따라 자동으로 사진이 맞춰짐 */
+            background-color: lightcyan;
+       }
+       .container-fluid{
+           background-color: lightgreen;
+           
+       }
+   </style>
+   <script>
+      $(function(){
+         
+      });
+   </script>
+</head>
+<body>
+    <!--
+        .container : 반응형 폭 설정
+        .container-fluid : 폭 100% 설정
+
+    -->
+    <div class="container">
+        <img src="../img/cat00.png " width="50%"/> 
+    </div>
+    <div class="container-fluid">
+        <img src="../img/cat1.png " width="50%"/> 
+    </div>
+</body>
+</html>
